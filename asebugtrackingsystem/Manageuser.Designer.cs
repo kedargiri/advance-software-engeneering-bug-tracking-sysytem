@@ -182,6 +182,7 @@
             this.btndelete.TabIndex = 2;
             this.btndelete.Text = "DELETE";
             this.btndelete.UseVisualStyleBackColor = true;
+            this.btndelete.Click += new System.EventHandler(this.btndelete_Click);
             // 
             // btnupdate
             // 
@@ -191,6 +192,7 @@
             this.btnupdate.TabIndex = 1;
             this.btnupdate.Text = "UPDATE";
             this.btnupdate.UseVisualStyleBackColor = true;
+            this.btnupdate.Click += new System.EventHandler(this.btnupdate_Click);
             // 
             // btnadd
             // 
@@ -200,6 +202,7 @@
             this.btnadd.TabIndex = 0;
             this.btnadd.Text = "ADD";
             this.btnadd.UseVisualStyleBackColor = true;
+            this.btnadd.Click += new System.EventHandler(this.btnadd_Click);
             // 
             // panel3
             // 
@@ -234,6 +237,7 @@
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "Manageuser";
             this.Text = "Manageuser";
+            this.Load += new System.EventHandler(this.Manageuser_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
