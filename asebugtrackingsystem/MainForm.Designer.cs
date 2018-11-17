@@ -34,19 +34,19 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.button9 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnclonegithub = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnprojectmember = new System.Windows.Forms.Button();
+            this.btnregisterbugsolution = new System.Windows.Forms.Button();
+            this.registerbug = new System.Windows.Forms.Button();
+            this.btnmanageproject = new System.Windows.Forms.Button();
+            this.btnmanagemember = new System.Windows.Forms.Button();
+            this.btnmanageuser = new System.Windows.Forms.Button();
             this.btnhome = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnldisplay = new System.Windows.Forms.Panel();
-            this.button7 = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -99,20 +99,33 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(39)))), ((int)(((byte)(4)))));
-            this.panel3.Controls.Add(this.button7);
+            this.panel3.Controls.Add(this.btnclonegithub);
             this.panel3.Controls.Add(this.panel6);
             this.panel3.Controls.Add(this.panel4);
-            this.panel3.Controls.Add(this.button1);
-            this.panel3.Controls.Add(this.button6);
-            this.panel3.Controls.Add(this.button5);
-            this.panel3.Controls.Add(this.button4);
-            this.panel3.Controls.Add(this.button3);
-            this.panel3.Controls.Add(this.button2);
+            this.panel3.Controls.Add(this.btnprojectmember);
+            this.panel3.Controls.Add(this.btnregisterbugsolution);
+            this.panel3.Controls.Add(this.registerbug);
+            this.panel3.Controls.Add(this.btnmanageproject);
+            this.panel3.Controls.Add(this.btnmanagemember);
+            this.panel3.Controls.Add(this.btnmanageuser);
             this.panel3.Controls.Add(this.btnhome);
             this.panel3.Location = new System.Drawing.Point(0, 12);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(245, 692);
             this.panel3.TabIndex = 13;
+            // 
+            // btnclonegithub
+            // 
+            this.btnclonegithub.FlatAppearance.BorderSize = 0;
+            this.btnclonegithub.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnclonegithub.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnclonegithub.ForeColor = System.Drawing.Color.White;
+            this.btnclonegithub.Location = new System.Drawing.Point(1, 566);
+            this.btnclonegithub.Name = "btnclonegithub";
+            this.btnclonegithub.Size = new System.Drawing.Size(242, 56);
+            this.btnclonegithub.TabIndex = 23;
+            this.btnclonegithub.Text = "Clone To Github";
+            this.btnclonegithub.UseVisualStyleBackColor = true;
             // 
             // panel6
             // 
@@ -129,88 +142,89 @@
             this.panel4.Size = new System.Drawing.Size(10, 56);
             this.panel4.TabIndex = 22;
             // 
-            // button1
+            // btnprojectmember
             // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(3, 393);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(242, 56);
-            this.button1.TabIndex = 21;
-            this.button1.Text = "Project Members";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnprojectmember.FlatAppearance.BorderSize = 0;
+            this.btnprojectmember.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnprojectmember.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnprojectmember.ForeColor = System.Drawing.Color.White;
+            this.btnprojectmember.Location = new System.Drawing.Point(3, 393);
+            this.btnprojectmember.Name = "btnprojectmember";
+            this.btnprojectmember.Size = new System.Drawing.Size(242, 56);
+            this.btnprojectmember.TabIndex = 21;
+            this.btnprojectmember.Text = "Project Members";
+            this.btnprojectmember.UseVisualStyleBackColor = true;
+            this.btnprojectmember.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button6
+            // btnregisterbugsolution
             // 
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(2, 503);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(242, 56);
-            this.button6.TabIndex = 20;
-            this.button6.Text = "REGISTER BUG SOLUTION";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.btnregisterbugsolution.FlatAppearance.BorderSize = 0;
+            this.btnregisterbugsolution.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnregisterbugsolution.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnregisterbugsolution.ForeColor = System.Drawing.Color.White;
+            this.btnregisterbugsolution.Location = new System.Drawing.Point(2, 503);
+            this.btnregisterbugsolution.Name = "btnregisterbugsolution";
+            this.btnregisterbugsolution.Size = new System.Drawing.Size(242, 56);
+            this.btnregisterbugsolution.TabIndex = 20;
+            this.btnregisterbugsolution.Text = "REGISTER BUG SOLUTION";
+            this.btnregisterbugsolution.UseVisualStyleBackColor = true;
+            this.btnregisterbugsolution.Click += new System.EventHandler(this.button6_Click);
             // 
-            // button5
+            // registerbug
             // 
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(1, 448);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(242, 56);
-            this.button5.TabIndex = 19;
-            this.button5.Text = "REGISTER BUG";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.registerbug.FlatAppearance.BorderSize = 0;
+            this.registerbug.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.registerbug.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.registerbug.ForeColor = System.Drawing.Color.White;
+            this.registerbug.Location = new System.Drawing.Point(1, 448);
+            this.registerbug.Name = "registerbug";
+            this.registerbug.Size = new System.Drawing.Size(242, 56);
+            this.registerbug.TabIndex = 19;
+            this.registerbug.Text = "REGISTER BUG";
+            this.registerbug.UseVisualStyleBackColor = true;
+            this.registerbug.Click += new System.EventHandler(this.button5_Click);
             // 
-            // button4
+            // btnmanageproject
             // 
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(1, 338);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(242, 56);
-            this.button4.TabIndex = 18;
-            this.button4.Text = "MANAGE PROJECT";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.btnmanageproject.FlatAppearance.BorderSize = 0;
+            this.btnmanageproject.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnmanageproject.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnmanageproject.ForeColor = System.Drawing.Color.White;
+            this.btnmanageproject.Location = new System.Drawing.Point(1, 338);
+            this.btnmanageproject.Name = "btnmanageproject";
+            this.btnmanageproject.Size = new System.Drawing.Size(242, 56);
+            this.btnmanageproject.TabIndex = 18;
+            this.btnmanageproject.Text = "MANAGE PROJECT";
+            this.btnmanageproject.UseVisualStyleBackColor = true;
+            this.btnmanageproject.Click += new System.EventHandler(this.button4_Click);
             // 
-            // button3
+            // btnmanagemember
             // 
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(1, 283);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(242, 56);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "MANAGE MEMBER";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnmanagemember.FlatAppearance.BorderSize = 0;
+            this.btnmanagemember.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnmanagemember.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnmanagemember.ForeColor = System.Drawing.Color.White;
+            this.btnmanagemember.Location = new System.Drawing.Point(1, 283);
+            this.btnmanagemember.Name = "btnmanagemember";
+            this.btnmanagemember.Size = new System.Drawing.Size(242, 56);
+            this.btnmanagemember.TabIndex = 2;
+            this.btnmanagemember.Text = "MANAGE MEMBER";
+            this.btnmanagemember.UseVisualStyleBackColor = true;
+            this.btnmanagemember.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button2
+            // btnmanageuser
             // 
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(0, 228);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(242, 56);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "MANAGE USER";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnmanageuser.FlatAppearance.BorderSize = 0;
+            this.btnmanageuser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnmanageuser.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnmanageuser.ForeColor = System.Drawing.Color.White;
+            this.btnmanageuser.Location = new System.Drawing.Point(0, 228);
+            this.btnmanageuser.Name = "btnmanageuser";
+            this.btnmanageuser.Size = new System.Drawing.Size(242, 56);
+            this.btnmanageuser.TabIndex = 1;
+            this.btnmanageuser.Text = "MANAGE USER";
+            this.btnmanageuser.UseVisualStyleBackColor = true;
+            this.btnmanageuser.Click += new System.EventHandler(this.button2_Click);
             // 
             // btnhome
             // 
@@ -254,19 +268,6 @@
             this.pnldisplay.Size = new System.Drawing.Size(820, 584);
             this.pnldisplay.TabIndex = 17;
             // 
-            // button7
-            // 
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Location = new System.Drawing.Point(1, 571);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(242, 56);
-            this.button7.TabIndex = 23;
-            this.button7.Text = "REGISTER BUG SOLUTION";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -304,15 +305,15 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button btnhome;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnregisterbugsolution;
+        private System.Windows.Forms.Button registerbug;
+        private System.Windows.Forms.Button btnmanageproject;
+        private System.Windows.Forms.Button btnmanagemember;
+        private System.Windows.Forms.Button btnmanageuser;
         private System.Windows.Forms.Panel pnldisplay;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnprojectmember;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button btnclonegithub;
     }
 }
