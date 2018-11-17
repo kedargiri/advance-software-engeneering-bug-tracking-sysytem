@@ -47,6 +47,7 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnldisplay = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -99,6 +100,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(39)))), ((int)(((byte)(4)))));
+            this.panel3.Controls.Add(this.button1);
             this.panel3.Controls.Add(this.btnclonegithub);
             this.panel3.Controls.Add(this.panel6);
             this.panel3.Controls.Add(this.panel4);
@@ -120,7 +122,7 @@
             this.btnclonegithub.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnclonegithub.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnclonegithub.ForeColor = System.Drawing.Color.White;
-            this.btnclonegithub.Location = new System.Drawing.Point(1, 566);
+            this.btnclonegithub.Location = new System.Drawing.Point(0, 566);
             this.btnclonegithub.Name = "btnclonegithub";
             this.btnclonegithub.Size = new System.Drawing.Size(242, 56);
             this.btnclonegithub.TabIndex = 23;
@@ -130,7 +132,7 @@
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(135)))), ((int)(((byte)(190)))));
-            this.panel6.Location = new System.Drawing.Point(0, 174);
+            this.panel6.Location = new System.Drawing.Point(0, 114);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(10, 56);
             this.panel6.TabIndex = 0;
@@ -148,7 +150,7 @@
             this.btnprojectmember.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnprojectmember.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnprojectmember.ForeColor = System.Drawing.Color.White;
-            this.btnprojectmember.Location = new System.Drawing.Point(3, 393);
+            this.btnprojectmember.Location = new System.Drawing.Point(0, 393);
             this.btnprojectmember.Name = "btnprojectmember";
             this.btnprojectmember.Size = new System.Drawing.Size(242, 56);
             this.btnprojectmember.TabIndex = 21;
@@ -162,7 +164,7 @@
             this.btnregisterbugsolution.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnregisterbugsolution.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnregisterbugsolution.ForeColor = System.Drawing.Color.White;
-            this.btnregisterbugsolution.Location = new System.Drawing.Point(2, 503);
+            this.btnregisterbugsolution.Location = new System.Drawing.Point(0, 503);
             this.btnregisterbugsolution.Name = "btnregisterbugsolution";
             this.btnregisterbugsolution.Size = new System.Drawing.Size(242, 56);
             this.btnregisterbugsolution.TabIndex = 20;
@@ -176,7 +178,7 @@
             this.registerbug.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.registerbug.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.registerbug.ForeColor = System.Drawing.Color.White;
-            this.registerbug.Location = new System.Drawing.Point(1, 448);
+            this.registerbug.Location = new System.Drawing.Point(0, 448);
             this.registerbug.Name = "registerbug";
             this.registerbug.Size = new System.Drawing.Size(242, 56);
             this.registerbug.TabIndex = 19;
@@ -190,7 +192,7 @@
             this.btnmanageproject.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnmanageproject.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnmanageproject.ForeColor = System.Drawing.Color.White;
-            this.btnmanageproject.Location = new System.Drawing.Point(1, 338);
+            this.btnmanageproject.Location = new System.Drawing.Point(0, 338);
             this.btnmanageproject.Name = "btnmanageproject";
             this.btnmanageproject.Size = new System.Drawing.Size(242, 56);
             this.btnmanageproject.TabIndex = 18;
@@ -204,7 +206,7 @@
             this.btnmanagemember.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnmanagemember.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnmanagemember.ForeColor = System.Drawing.Color.White;
-            this.btnmanagemember.Location = new System.Drawing.Point(1, 283);
+            this.btnmanagemember.Location = new System.Drawing.Point(0, 283);
             this.btnmanagemember.Name = "btnmanagemember";
             this.btnmanagemember.Size = new System.Drawing.Size(242, 56);
             this.btnmanagemember.TabIndex = 2;
@@ -232,7 +234,7 @@
             this.btnhome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnhome.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnhome.ForeColor = System.Drawing.Color.White;
-            this.btnhome.Location = new System.Drawing.Point(0, 174);
+            this.btnhome.Location = new System.Drawing.Point(0, 112);
             this.btnhome.Name = "btnhome";
             this.btnhome.Size = new System.Drawing.Size(242, 56);
             this.btnhome.TabIndex = 0;
@@ -267,6 +269,20 @@
             this.pnldisplay.Name = "pnldisplay";
             this.pnldisplay.Size = new System.Drawing.Size(820, 584);
             this.pnldisplay.TabIndex = 17;
+            // 
+            // button1
+            // 
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(0, 176);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(242, 56);
+            this.button1.TabIndex = 24;
+            this.button1.Text = "Manage Designation";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // MainForm
             // 
@@ -315,5 +331,6 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button btnclonegithub;
+        private System.Windows.Forms.Button button1;
     }
 }

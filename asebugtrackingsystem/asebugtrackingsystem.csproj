@@ -69,6 +69,12 @@
     <Compile Include="ManageMember.Designer.cs">
       <DependentUpon>ManageMember.cs</DependentUpon>
     </Compile>
+    <Compile Include="ManageRoles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageRoles.Designer.cs">
+      <DependentUpon>ManageRoles.cs</DependentUpon>
+    </Compile>
     <Compile Include="Manageuser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +118,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ManageMember.resx">
       <DependentUpon>ManageMember.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageRoles.resx">
+      <DependentUpon>ManageRoles.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Manageuser.resx">
       <DependentUpon>Manageuser.cs</DependentUpon>

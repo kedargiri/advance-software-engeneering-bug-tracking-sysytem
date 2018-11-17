@@ -84,5 +84,14 @@ namespace asebugtrackingsystem
             pnldisplay.Controls.Add(rbs);
             rbs.Show();
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            pnldisplay.Controls.Clear();
+            ManageRoles mr = new ManageRoles();
+            mr.TopLevel = false;
+            pnldisplay.Controls.Add(mr);
+            mr.Show();
+        }
     }
 }
