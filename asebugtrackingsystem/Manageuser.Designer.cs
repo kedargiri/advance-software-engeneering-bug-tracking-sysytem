@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.cmbuserrole = new System.Windows.Forms.ComboBox();
+            this.cmbfullname = new System.Windows.Forms.ComboBox();
+            this.txtconformpassword = new System.Windows.Forms.TextBox();
+            this.txtpassword = new System.Windows.Forms.TextBox();
+            this.txtusername = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -41,9 +41,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btndelete = new System.Windows.Forms.Button();
+            this.btnupdate = new System.Windows.Forms.Button();
+            this.btnadd = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
@@ -56,11 +56,11 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.comboBox2);
-            this.panel1.Controls.Add(this.comboBox1);
-            this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.cmbuserrole);
+            this.panel1.Controls.Add(this.cmbfullname);
+            this.panel1.Controls.Add(this.txtconformpassword);
+            this.panel1.Controls.Add(this.txtpassword);
+            this.panel1.Controls.Add(this.txtusername);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
@@ -71,42 +71,42 @@
             this.panel1.Size = new System.Drawing.Size(784, 211);
             this.panel1.TabIndex = 10;
             // 
-            // comboBox2
+            // cmbuserrole
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(140, 34);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(200, 29);
-            this.comboBox2.TabIndex = 19;
+            this.cmbuserrole.FormattingEnabled = true;
+            this.cmbuserrole.Location = new System.Drawing.Point(140, 34);
+            this.cmbuserrole.Name = "cmbuserrole";
+            this.cmbuserrole.Size = new System.Drawing.Size(200, 29);
+            this.cmbuserrole.TabIndex = 19;
             // 
-            // comboBox1
+            // cmbfullname
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(140, 80);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(200, 29);
-            this.comboBox1.TabIndex = 18;
+            this.cmbfullname.FormattingEnabled = true;
+            this.cmbfullname.Location = new System.Drawing.Point(140, 80);
+            this.cmbfullname.Name = "cmbfullname";
+            this.cmbfullname.Size = new System.Drawing.Size(200, 29);
+            this.cmbfullname.TabIndex = 18;
             // 
-            // textBox3
+            // txtconformpassword
             // 
-            this.textBox3.Location = new System.Drawing.Point(547, 31);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(194, 27);
-            this.textBox3.TabIndex = 17;
+            this.txtconformpassword.Location = new System.Drawing.Point(547, 31);
+            this.txtconformpassword.Name = "txtconformpassword";
+            this.txtconformpassword.Size = new System.Drawing.Size(194, 27);
+            this.txtconformpassword.TabIndex = 17;
             // 
-            // textBox2
+            // txtpassword
             // 
-            this.textBox2.Location = new System.Drawing.Point(140, 162);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(200, 27);
-            this.textBox2.TabIndex = 16;
+            this.txtpassword.Location = new System.Drawing.Point(140, 162);
+            this.txtpassword.Name = "txtpassword";
+            this.txtpassword.Size = new System.Drawing.Size(200, 27);
+            this.txtpassword.TabIndex = 16;
             // 
-            // textBox1
+            // txtusername
             // 
-            this.textBox1.Location = new System.Drawing.Point(140, 119);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(200, 27);
-            this.textBox1.TabIndex = 15;
+            this.txtusername.Location = new System.Drawing.Point(140, 119);
+            this.txtusername.Name = "txtusername";
+            this.txtusername.Size = new System.Drawing.Size(200, 27);
+            this.txtusername.TabIndex = 15;
             // 
             // label5
             // 
@@ -166,40 +166,40 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.button3);
-            this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.btndelete);
+            this.panel2.Controls.Add(this.btnupdate);
+            this.panel2.Controls.Add(this.btnadd);
             this.panel2.Location = new System.Drawing.Point(12, 257);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(796, 49);
             this.panel2.TabIndex = 12;
             // 
-            // button3
+            // btndelete
             // 
-            this.button3.Location = new System.Drawing.Point(472, 1);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(144, 43);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "DELETE";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btndelete.Location = new System.Drawing.Point(472, 1);
+            this.btndelete.Name = "btndelete";
+            this.btndelete.Size = new System.Drawing.Size(144, 43);
+            this.btndelete.TabIndex = 2;
+            this.btndelete.Text = "DELETE";
+            this.btndelete.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnupdate
             // 
-            this.button2.Location = new System.Drawing.Point(322, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(144, 43);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "UPDATE";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnupdate.Location = new System.Drawing.Point(322, 3);
+            this.btnupdate.Name = "btnupdate";
+            this.btnupdate.Size = new System.Drawing.Size(144, 43);
+            this.btnupdate.TabIndex = 1;
+            this.btnupdate.Text = "UPDATE";
+            this.btnupdate.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnadd
             // 
-            this.button1.Location = new System.Drawing.Point(157, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(144, 43);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "ADD";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnadd.Location = new System.Drawing.Point(157, 3);
+            this.btnadd.Name = "btnadd";
+            this.btnadd.Size = new System.Drawing.Size(144, 43);
+            this.btnadd.TabIndex = 0;
+            this.btnadd.Text = "ADD";
+            this.btnadd.UseVisualStyleBackColor = true;
             // 
             // panel3
             // 
@@ -247,11 +247,11 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox cmbuserrole;
+        private System.Windows.Forms.ComboBox cmbfullname;
+        private System.Windows.Forms.TextBox txtconformpassword;
+        private System.Windows.Forms.TextBox txtpassword;
+        private System.Windows.Forms.TextBox txtusername;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -259,9 +259,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btndelete;
+        private System.Windows.Forms.Button btnupdate;
+        private System.Windows.Forms.Button btnadd;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.DataGridView dataGridView1;
     }
