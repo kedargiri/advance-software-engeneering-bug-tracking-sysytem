@@ -106,8 +106,8 @@ namespace DataAccessLayer
                 SqlCommand cmd = new SqlCommand("SELECT * FROM UserRoleTable", conn);
                 cmd.CommandType = CommandType.Text;
                 conn.Open();
-                SqlDataReader dataReaderToGetAllTheRoleInformation = cmd.ExecuteReader();
-                dt.Load(dataReaderToGetAllTheRoleInformation);
+                SqlDataReader dr = cmd.ExecuteReader();
+                dt.Load(dr);
                 conn.Close();
                 return dt;
             }
@@ -122,5 +122,110 @@ namespace DataAccessLayer
 
         }
 
+        public DataTable getAllProjects()
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                SqlCommand cmd = new SqlCommand("Select * from ProjectTable", conn);
+                cmd.CommandType = CommandType.Text;
+                conn.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                dt.Load(dr);
+                conn.Close();
+                return dt;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally { conn.Close(); }
+        }
+
+
+        public DataTable getAllMembersInProject()
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                SqlCommand cmd = new SqlCommand("SELECT mp.id,p.projectName,m.memberName,mp.memberRole,mp.memberResponsibilities FROM MemberInProjectTable mp, ProjectTable p, MemberTable m WHERE mp.projectId=p.projectId AND mp.memberId=m.memberId", conn);
+                conn.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                dt.Load(dr);
+                conn.Close();
+                return dt;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally { conn.Close(); }
+        }
+
+        public DataTable GetProjectBymemberId(int memberId)
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                SqlCommand cmd = new SqlCommand("Select p.ProjectName,p.ProjectId from ProjectMemberTable pm,ProjectTable p where memberId=@memberId and p.ProjectId=pm.ProjectId", conn);
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.AddWithValue("@memberId", memberId);
+                conn.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                dt.Load(dr);
+                conn.Close();
+                return dt;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally { conn.Close(); }
+        }
+        public DataTable getProjectMemberByProjectId(int projectId)
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                SqlCommand cmd = new SqlCommand("Select * from MemberInProjectTable where projectId=@projectId", conn);
+               cmd.CommandType = CommandType.Text;
+                cmd.Parameters.AddWithValue("@projectId", projectId);
+                conn.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                dt.Load(dr);
+                conn.Close();
+                return dt;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally { conn.Close(); }
+        }
+
+        public int totalProjectMember()
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                SqlCommand cmd = new SqlCommand("Select count(*) from ProjectMemberTable",conn);
+                conn.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                dt.Load(dr);
+                conn.Close();
+                int x = Convert.ToInt32(dt.Rows[0][0].ToString());
+                return x;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally { conn.Close(); }
+        }
     }
 }

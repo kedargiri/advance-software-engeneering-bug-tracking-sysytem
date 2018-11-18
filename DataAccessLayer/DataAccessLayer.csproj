@@ -46,6 +46,8 @@
     <Compile Include="ManageMemberClass.cs" />
     <Compile Include="ManageRole.cs" />
     <Compile Include="ManageUser.cs" />
+    <Compile Include="ProjectManagementClass.cs" />
+    <Compile Include="ProjectMemberClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

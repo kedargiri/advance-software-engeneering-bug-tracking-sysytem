@@ -11,6 +11,8 @@ namespace BusinessLogicLayer
         ManageRole mr = new ManageRole();
         ManageUser mu = new ManageUser();
         ManageMemberClass mc = new ManageMemberClass();
+        ProjectManagementClass pmc = new ProjectManagementClass();
+        ProjectMemberClass PMC = new ProjectMemberClass();
         
         public bool ManageRoles(int roleid, string userrolename, string roledescription, int mode)
         {
@@ -94,6 +96,61 @@ namespace BusinessLogicLayer
             }
          }
 
- }  
+        public bool manageProjects(int projectId,
+         String projectName,
+         DateTime projectStartDate,
+         DateTime projectEndDate,
+         String projectDescription,
+         int mode)
+        {
+
+            try
+            {
+                bool result = false;
+                int rs = pmc.manageProjects(projectId, projectName, projectStartDate, projectEndDate, projectDescription, mode);
+                if (rs > 0)
+                    result = true;
+                else
+                    result = false;
+
+                return result;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+       public bool manageProjectMembers(int id,
+      int projectid,
+      int memberid,
+      String memberRole,
+      String memberResponsibilities,
+      int Mode)
+        {
+            try
+            {
+               bool result= false;
+                int rs = PMC.manageMembersInProject(id,projectid,memberid, memberRole, memberResponsibilities,Mode);
+                if(rs>0)
+                    result =true;
+                else
+                result= false;
+
+
+
+                return result;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+
+
+
+    }  
     }
 
