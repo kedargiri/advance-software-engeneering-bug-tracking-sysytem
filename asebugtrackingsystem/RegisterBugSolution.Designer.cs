@@ -29,47 +29,112 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.dgvregisterbugsolution = new System.Windows.Forms.DataGridView();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.btndelete = new System.Windows.Forms.Button();
+            this.btnedit = new System.Windows.Forms.Button();
+            this.btnadd = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.pbscreenshot = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbbugdetail = new System.Windows.Forms.ComboBox();
+            this.txtsolution = new System.Windows.Forms.TextBox();
+            this.cmbproject = new System.Windows.Forms.ComboBox();
+            this.dtpdate = new System.Windows.Forms.DateTimePicker();
+            this.cmbbugsolution = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.txtcode = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvregisterbugsolution)).BeginInit();
+            this.panel4.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbscreenshot)).BeginInit();
+            this.panel2.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.panel6);
             this.groupBox1.Controls.Add(this.panel5);
             this.groupBox1.Controls.Add(this.panel4);
             this.groupBox1.Controls.Add(this.panel1);
-            this.groupBox1.Location = new System.Drawing.Point(0, 0);
+            this.groupBox1.Location = new System.Drawing.Point(2, 1);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(808, 585);
+            this.groupBox1.Size = new System.Drawing.Size(807, 585);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "RegisterBugSolution";
+            // 
+            // panel5
+            // 
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.dgvregisterbugsolution);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel5.Location = new System.Drawing.Point(3, 401);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(801, 181);
+            this.panel5.TabIndex = 2;
+            // 
+            // dgvregisterbugsolution
+            // 
+            this.dgvregisterbugsolution.AllowUserToAddRows = false;
+            this.dgvregisterbugsolution.AllowUserToDeleteRows = false;
+            this.dgvregisterbugsolution.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvregisterbugsolution.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvregisterbugsolution.Location = new System.Drawing.Point(0, 0);
+            this.dgvregisterbugsolution.Name = "dgvregisterbugsolution";
+            this.dgvregisterbugsolution.ReadOnly = true;
+            this.dgvregisterbugsolution.Size = new System.Drawing.Size(799, 179);
+            this.dgvregisterbugsolution.TabIndex = 0;
+            // 
+            // panel4
+            // 
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.btndelete);
+            this.panel4.Controls.Add(this.btnedit);
+            this.panel4.Controls.Add(this.btnadd);
+            this.panel4.Location = new System.Drawing.Point(0, 233);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(802, 37);
+            this.panel4.TabIndex = 1;
+            // 
+            // btndelete
+            // 
+            this.btndelete.Location = new System.Drawing.Point(457, 3);
+            this.btndelete.Name = "btndelete";
+            this.btndelete.Size = new System.Drawing.Size(161, 29);
+            this.btndelete.TabIndex = 2;
+            this.btndelete.Text = "Delete";
+            this.btndelete.UseVisualStyleBackColor = true;
+            // 
+            // btnedit
+            // 
+            this.btnedit.Location = new System.Drawing.Point(290, 3);
+            this.btnedit.Name = "btnedit";
+            this.btnedit.Size = new System.Drawing.Size(161, 29);
+            this.btnedit.TabIndex = 1;
+            this.btnedit.Text = "Edit";
+            this.btnedit.UseVisualStyleBackColor = true;
+            // 
+            // btnadd
+            // 
+            this.btnadd.Location = new System.Drawing.Point(123, 3);
+            this.btnadd.Name = "btnadd";
+            this.btnadd.Size = new System.Drawing.Size(161, 29);
+            this.btnadd.TabIndex = 0;
+            this.btnadd.Text = "Add";
+            this.btnadd.UseVisualStyleBackColor = true;
+            this.btnadd.Click += new System.EventHandler(this.btnadd_Click);
             // 
             // panel1
             // 
@@ -78,17 +143,35 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Location = new System.Drawing.Point(0, 27);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(802, 271);
+            this.panel1.Size = new System.Drawing.Size(802, 210);
             this.panel1.TabIndex = 0;
+            // 
+            // panel3
+            // 
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.pbscreenshot);
+            this.panel3.Location = new System.Drawing.Point(428, 3);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(369, 195);
+            this.panel3.TabIndex = 1;
+            // 
+            // pbscreenshot
+            // 
+            this.pbscreenshot.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbscreenshot.Location = new System.Drawing.Point(0, 0);
+            this.pbscreenshot.Name = "pbscreenshot";
+            this.pbscreenshot.Size = new System.Drawing.Size(367, 193);
+            this.pbscreenshot.TabIndex = 0;
+            this.pbscreenshot.TabStop = false;
             // 
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.comboBox3);
-            this.panel2.Controls.Add(this.textBox2);
-            this.panel2.Controls.Add(this.comboBox2);
-            this.panel2.Controls.Add(this.dateTimePicker1);
-            this.panel2.Controls.Add(this.comboBox1);
+            this.panel2.Controls.Add(this.cmbbugdetail);
+            this.panel2.Controls.Add(this.txtsolution);
+            this.panel2.Controls.Add(this.cmbproject);
+            this.panel2.Controls.Add(this.dtpdate);
+            this.panel2.Controls.Add(this.cmbbugsolution);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
@@ -96,51 +179,51 @@
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(6, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(416, 263);
+            this.panel2.Size = new System.Drawing.Size(416, 195);
             this.panel2.TabIndex = 0;
             // 
-            // comboBox3
+            // cmbbugdetail
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(116, 153);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(292, 29);
-            this.comboBox3.TabIndex = 25;
+            this.cmbbugdetail.FormattingEnabled = true;
+            this.cmbbugdetail.Location = new System.Drawing.Point(124, 114);
+            this.cmbbugdetail.Name = "cmbbugdetail";
+            this.cmbbugdetail.Size = new System.Drawing.Size(292, 29);
+            this.cmbbugdetail.TabIndex = 25;
             // 
-            // textBox2
+            // txtsolution
             // 
-            this.textBox2.Location = new System.Drawing.Point(116, 198);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(292, 27);
-            this.textBox2.TabIndex = 24;
+            this.txtsolution.Location = new System.Drawing.Point(124, 159);
+            this.txtsolution.Name = "txtsolution";
+            this.txtsolution.Size = new System.Drawing.Size(292, 27);
+            this.txtsolution.TabIndex = 24;
             // 
-            // comboBox2
+            // cmbproject
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(116, 117);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(292, 29);
-            this.comboBox2.TabIndex = 23;
+            this.cmbproject.FormattingEnabled = true;
+            this.cmbproject.Location = new System.Drawing.Point(124, 78);
+            this.cmbproject.Name = "cmbproject";
+            this.cmbproject.Size = new System.Drawing.Size(292, 29);
+            this.cmbproject.TabIndex = 23;
             // 
-            // dateTimePicker1
+            // dtpdate
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(116, 79);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(292, 27);
-            this.dateTimePicker1.TabIndex = 22;
+            this.dtpdate.Location = new System.Drawing.Point(124, 40);
+            this.dtpdate.Name = "dtpdate";
+            this.dtpdate.Size = new System.Drawing.Size(292, 27);
+            this.dtpdate.TabIndex = 22;
             // 
-            // comboBox1
+            // cmbbugsolution
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(116, 35);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(292, 29);
-            this.comboBox1.TabIndex = 21;
+            this.cmbbugsolution.FormattingEnabled = true;
+            this.cmbbugsolution.Location = new System.Drawing.Point(123, 8);
+            this.cmbbugsolution.Name = "cmbbugsolution";
+            this.cmbbugsolution.Size = new System.Drawing.Size(292, 29);
+            this.cmbbugsolution.TabIndex = 21;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(0, 201);
+            this.label5.Location = new System.Drawing.Point(8, 162);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(121, 21);
             this.label5.TabIndex = 20;
@@ -149,7 +232,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(4, 156);
+            this.label4.Location = new System.Drawing.Point(12, 117);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(90, 21);
             this.label4.TabIndex = 19;
@@ -158,7 +241,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 117);
+            this.label3.Location = new System.Drawing.Point(11, 78);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(64, 21);
             this.label3.TabIndex = 18;
@@ -167,7 +250,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 79);
+            this.label2.Location = new System.Drawing.Point(11, 40);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(50, 21);
             this.label2.TabIndex = 17;
@@ -176,89 +259,28 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(0, 38);
+            this.label1.Location = new System.Drawing.Point(4, 11);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(117, 21);
             this.label1.TabIndex = 16;
             this.label1.Text = "Bug Solved By";
             // 
-            // panel3
+            // panel6
             // 
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.pictureBox1);
-            this.panel3.Location = new System.Drawing.Point(428, 3);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(369, 263);
-            this.panel3.TabIndex = 1;
+            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel6.Controls.Add(this.txtcode);
+            this.panel6.Location = new System.Drawing.Point(3, 272);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(799, 123);
+            this.panel6.TabIndex = 3;
             // 
-            // pictureBox1
+            // txtcode
             // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(367, 261);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // panel4
-            // 
-            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Controls.Add(this.button3);
-            this.panel4.Controls.Add(this.button2);
-            this.panel4.Controls.Add(this.button1);
-            this.panel4.Location = new System.Drawing.Point(0, 305);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(802, 50);
-            this.panel4.TabIndex = 1;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(123, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(161, 42);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Add";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(290, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(161, 42);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Edit";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(457, 3);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(161, 42);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Delete";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // panel5
-            // 
-            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel5.Controls.Add(this.dataGridView1);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel5.Location = new System.Drawing.Point(3, 361);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(802, 221);
-            this.panel5.TabIndex = 2;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(800, 219);
-            this.dataGridView1.TabIndex = 0;
+            this.txtcode.Location = new System.Drawing.Point(0, 3);
+            this.txtcode.Multiline = true;
+            this.txtcode.Name = "txtcode";
+            this.txtcode.Size = new System.Drawing.Size(793, 115);
+            this.txtcode.TabIndex = 0;
             // 
             // RegisterBugSolution
             // 
@@ -268,18 +290,21 @@
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "RegisterBugSolution";
             this.Text = "RegisterBugSolution";
+            this.Load += new System.EventHandler(this.RegisterBugSolution_Load);
             this.groupBox1.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvregisterbugsolution)).EndInit();
+            this.panel4.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbscreenshot)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel4.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -288,24 +313,26 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvregisterbugsolution;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btndelete;
+        private System.Windows.Forms.Button btnedit;
+        private System.Windows.Forms.Button btnadd;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbscreenshot;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbbugdetail;
+        private System.Windows.Forms.TextBox txtsolution;
+        private System.Windows.Forms.ComboBox cmbproject;
+        private System.Windows.Forms.DateTimePicker dtpdate;
+        private System.Windows.Forms.ComboBox cmbbugsolution;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.TextBox txtcode;
     }
 }

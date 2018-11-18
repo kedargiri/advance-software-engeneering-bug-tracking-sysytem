@@ -332,6 +332,51 @@ namespace DataAccessLayer
             }
             finally { conn.Close(); }
         }
+        public DataTable getAllBugSolutions()
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                SqlCommand cmd = new SqlCommand("select b.bugSolutionId,b.dateOfSolutionIdentified,m.memberName, p.projectName,e.bugDetails,e.snapShotOfBugMessage,b.solutionDetails,b.codeAfterFixingBug from BugSolutionTable b,BugEntryTable e, ProjectTable p, MemberTable m where b.bugId=e.bugId and b.projectId=p.projectId and b.memberId=e.memberId", conn);
+                cmd.CommandType = CommandType.Text;
+                conn.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                dt.Load(dr);
+                conn.Close();
+                return dt;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally { conn.Close(); }
+        }
+        public DataTable searchBugSolutionByBugDetails(String bugDetails)
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                SqlCommand cmd = new SqlCommand("select b.bugSolutionId,b.dateOfSolutionIdentified,m.memberName, p.projectName,e.bugDetails,e.snapShotOfBugMessage,b.solutionDetails,b.codeAfterFixingBug from BugSolutionTable b,BugEntryTable e, ProjectTable p, MemberTable m where b.bugId=e.bugId and b.projectId=p.projectId and b.memberId=e.memberId and e.bugDetails=@bugDetails or e.bugDetails like @bugDetails + '%' ", conn);
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.AddWithValue("@bugDetails", bugDetails);
+                conn.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                dt.Load(dr);
+                conn.Close();
+                return dt;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally { conn.Close(); }
+        }
+
+
+
+
     }
 
 

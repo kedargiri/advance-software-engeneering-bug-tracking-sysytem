@@ -14,7 +14,7 @@ namespace BusinessLogicLayer
         ProjectManagementClass pmc = new ProjectManagementClass();
         ProjectMemberClass PMC = new ProjectMemberClass();
         BugEntryClass bec = new BugEntryClass();
-        
+        RegisterBugSolutionClass rb = new RegisterBugSolutionClass();
         public bool ManageRoles(int roleid, string userrolename, string roledescription, int mode)
         {
             try
@@ -178,6 +178,31 @@ namespace BusinessLogicLayer
                 throw ex;
             }
         }
+
+        public bool manageBugSolutions(int bugSolutionId,
+            DateTime dateOfSolutionIdentified,
+            int projectId,
+            int bugId,
+            int memberId,
+            string solutionDetails,
+            string codeAfterFixingBug,
+            int mode)
+        {
+            try
+            {
+                int rs = rb.manageBugSolutions(bugSolutionId, dateOfSolutionIdentified, projectId, bugId, memberId, solutionDetails, codeAfterFixingBug, mode);
+                if (rs > 0)
+                    return true;
+                else return false;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+
 
     }  
     }
