@@ -13,6 +13,7 @@ namespace BusinessLogicLayer
         ManageMemberClass mc = new ManageMemberClass();
         ProjectManagementClass pmc = new ProjectManagementClass();
         ProjectMemberClass PMC = new ProjectMemberClass();
+        BugEntryClass bec = new BugEntryClass();
         
         public bool ManageRoles(int roleid, string userrolename, string roledescription, int mode)
         {
@@ -149,7 +150,34 @@ namespace BusinessLogicLayer
         }
 
 
+        public bool manageBugs(int bugId,
+          DateTime bugIdentifiedDate,
+          int memberId,
+          int projectId,
+          String classLibraryName,
+          String className,
+          String methodName,
+          String blockName,
+          String lineNumber,
+          String bugDetails,
+          byte[] snapShotOfBugMessage,
+          String codeContainingBug,
+          int mode)
+        {
+            try
+            {
+                int rs = bec.manageBugs(bugId, bugIdentifiedDate, memberId, projectId, classLibraryName, className, methodName, blockName, lineNumber, bugDetails, snapShotOfBugMessage, codeContainingBug, mode);
+                if (rs > 0)
+                    return true;
+                else
+                    return false;
+            }
+            catch (Exception ex)
+            {
 
+                throw ex;
+            }
+        }
 
     }  
     }

@@ -140,14 +140,14 @@
             // 
             this.dtpenddate.Location = new System.Drawing.Point(164, 112);
             this.dtpenddate.Name = "dtpenddate";
-            this.dtpenddate.Size = new System.Drawing.Size(200, 27);
+            this.dtpenddate.Size = new System.Drawing.Size(294, 27);
             this.dtpenddate.TabIndex = 12;
             // 
             // dtpstartdate
             // 
             this.dtpstartdate.Location = new System.Drawing.Point(164, 64);
             this.dtpstartdate.Name = "dtpstartdate";
-            this.dtpstartdate.Size = new System.Drawing.Size(200, 27);
+            this.dtpstartdate.Size = new System.Drawing.Size(294, 27);
             this.dtpstartdate.TabIndex = 11;
             // 
             // txtprojectname

@@ -227,5 +227,113 @@ namespace DataAccessLayer
             }
             finally { conn.Close(); }
         }
+
+        public DataTable getAllBugs()
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                SqlCommand cmd = new SqlCommand("select b.bugId, b.bugIdentifiedDate, m.memberName, p.projectName, b.classLibraryName,b.className,b.methodName, b.blockName, b.lineNumber, b.bugDetails, b.snapShotOfBugMessage, b.codeContainingBug from BugEntryTable b, MemberTable m, ProjectTable p where b.memberId=m.memberId and b.projectId=p.projectId", conn);
+                conn.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                dt.Load(dr);
+                conn.Close();
+                return dt;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally { conn.Close(); }
+        }
+        public int bugsCount()
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                SqlCommand cmd = new SqlCommand("Select count(*) from BugTable", conn);
+                conn.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                dt.Load(dr);
+                conn.Close();
+                int totalBugs = Convert.ToInt32(dt.Rows[0][0].ToString());
+                return totalBugs;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally { conn.Close(); }
+        }
+        public DataTable getBugsBymemberId(int memberId)
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                SqlCommand cmd = new SqlCommand("Select * from BugTable where memberId=@memberId", conn);
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.AddWithValue("@memberId", memberId);
+                conn.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                dt.Load(dr);
+                conn.Close();
+                return dt;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally { conn.Close(); }
+        }
+        public DataTable getBugsInProjectByProjectId(int projectId)
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                SqlCommand cmd = new SqlCommand("select * from BugEntryTable where projectId=@projectId", conn);
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.AddWithValue("@projectId", projectId);
+                conn.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                dt.Load(dr);
+               conn.Close();
+                return dt;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally { conn.Close(); }
+        }
+
+        public DataTable getBugsByMemberAndProject(int memberId, int projectId)
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                SqlCommand cmd = new SqlCommand("Select bugId,bugDetails from BugTable where memberId=@memberId and projectId=@projectId", conn);
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.AddWithValue("@memberId", memberId);
+                cmd.Parameters.AddWithValue("@projectId", projectId);
+                conn.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                dt.Load(dr);
+                conn.Close();
+                return dt;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally { conn.Close(); }
+        }
     }
+
+
 }
+
