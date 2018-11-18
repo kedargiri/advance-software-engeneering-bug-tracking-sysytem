@@ -20,6 +20,7 @@ namespace asebugtrackingsystem
         }
         BusinessLogicClass blc = new BusinessLogicClass();
         ManageRole mr = new ManageRole();
+        Getalldatatables get = new Getalldatatables();
         public int id;
         private void btnadd_Click(object sender, EventArgs e)
         {
@@ -29,7 +30,7 @@ namespace asebugtrackingsystem
                 if (x == true)
                 {
                     MessageBox.Show("User Successfull created");
-                    dgvmanagerole.DataSource = mr.getalluserroles();
+                    dgvmanagerole.DataSource = get.getalluserroles();
                     HelperClass.MakeFieldBlank(panel1);
 
                 }
@@ -45,7 +46,7 @@ namespace asebugtrackingsystem
 
         private void ManageRoles_Load(object sender, EventArgs e)
         {
-            dgvmanagerole.DataSource = mr.getalluserroles();
+            dgvmanagerole.DataSource = get.getalluserroles();
         }
 
         private void dgvmanagerole_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -63,7 +64,7 @@ namespace asebugtrackingsystem
                 if (x == true)
                 {
                     MessageBox.Show("User Successfull Updated");
-                    dgvmanagerole.DataSource = mr.getalluserroles();
+                    dgvmanagerole.DataSource = get.getalluserroles();
                     HelperClass.MakeFieldBlank(panel1);
 
                 }
@@ -85,7 +86,7 @@ namespace asebugtrackingsystem
                 if (x == true)
                 {
                     MessageBox.Show("User Successfull Deleted");
-                    dgvmanagerole.DataSource = mr.getalluserroles();
+                    dgvmanagerole.DataSource = get.getalluserroles();
                     HelperClass.MakeFieldBlank(panel1);
 
                 }
@@ -97,6 +98,11 @@ namespace asebugtrackingsystem
 
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

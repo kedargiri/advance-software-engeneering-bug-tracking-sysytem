@@ -45,12 +45,12 @@
             this.btnupdate = new System.Windows.Forms.Button();
             this.btnadd = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvgetallusers = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvgetallusers)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -206,23 +206,26 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.dataGridView1);
+            this.panel3.Controls.Add(this.dgvgetallusers);
             this.panel3.Location = new System.Drawing.Point(12, 312);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(802, 266);
             this.panel3.TabIndex = 13;
             // 
-            // dataGridView1
+            // dgvgetallusers
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(802, 266);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvgetallusers.AllowUserToAddRows = false;
+            this.dgvgetallusers.AllowUserToDeleteRows = false;
+            this.dgvgetallusers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvgetallusers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvgetallusers.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvgetallusers.Location = new System.Drawing.Point(0, 0);
+            this.dgvgetallusers.Name = "dgvgetallusers";
+            this.dgvgetallusers.ReadOnly = true;
+            this.dgvgetallusers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvgetallusers.Size = new System.Drawing.Size(802, 266);
+            this.dgvgetallusers.TabIndex = 0;
+            this.dgvgetallusers.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvgetallusers_CellClick);
             // 
             // Manageuser
             // 
@@ -243,7 +246,7 @@
             this.groupBox1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvgetallusers)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -267,6 +270,6 @@
         private System.Windows.Forms.Button btnupdate;
         private System.Windows.Forms.Button btnadd;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvgetallusers;
     }
 }

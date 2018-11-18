@@ -36,26 +36,26 @@ namespace DataAccessLayer
             finally { conn.Close(); }
 
         }
-        public DataTable getalluserroles()
-        {
-            try
-            {
-                DataTable dt = new DataTable();
-                SqlCommand cmd = new SqlCommand("select * from UserRoleTable",conn);
-                cmd.CommandType = CommandType.Text;
-                conn.Open();
-                SqlDataReader dr = cmd.ExecuteReader();
-                dt.Load(dr);
-                conn.Close();
-                return dt;
-            }
-            catch (Exception ex)
-            {
+        //public DataTable getalluserroles()
+        //{
+        //    try
+        //    {
+        //        DataTable dt = new DataTable();
+        //        SqlCommand cmd = new SqlCommand("select * from UserRoleTable",conn);
+        //        cmd.CommandType = CommandType.Text;
+        //        conn.Open();
+        //        SqlDataReader dr = cmd.ExecuteReader();
+        //        dt.Load(dr);
+        //        conn.Close();
+        //        return dt;
+        //    }
+        //    catch (Exception ex)
+        //    {
 
-                throw ex;
-            }
-            finally { conn.Close(); }
-        }
+        //        throw ex;
+        //    }
+        //    finally { conn.Close(); }
+        //}
 
 
     }

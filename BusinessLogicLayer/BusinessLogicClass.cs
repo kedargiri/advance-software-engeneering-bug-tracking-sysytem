@@ -10,6 +10,8 @@ namespace BusinessLogicLayer
     {
         ManageRole mr = new ManageRole();
         ManageUser mu = new ManageUser();
+        ManageMemberClass mc = new ManageMemberClass();
+        
         public bool ManageRoles(int roleid, string userrolename, string roledescription, int mode)
         {
             try
@@ -50,5 +52,48 @@ namespace BusinessLogicLayer
             }
 
         }
+
+        public bool ManageMembers(int memberId,
+           String memberName,
+           String memberAddress,
+           String contactNumber,
+           String emailAddress,
+           String gender,
+           DateTime dateOfBirth,
+           DateTime dateOfJoin,
+           String memberDesignation,
+           byte[] profilePicture,
+           int Mode)
+        {
+            try
+            {
+                bool result = false;
+                int b=mc.ManageMembers(memberId,
+                    memberName,
+                    memberAddress,
+                    contactNumber,
+                    emailAddress,
+                    gender,
+                    dateOfBirth,
+                    dateOfJoin,
+                    memberDesignation,
+                    profilePicture,
+                    Mode);
+                if (b > 0)
+                    result = true;
+                else
+                    result = false;
+
+                return result;
+            }
+            catch (Exception ex)
+            {
+
+
+                throw ex;
+            }
+         }
+
+ }  
     }
-}
+

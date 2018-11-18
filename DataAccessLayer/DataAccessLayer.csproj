@@ -42,6 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConnectionClass.cs" />
+    <Compile Include="Getalldatatables.cs" />
+    <Compile Include="ManageMemberClass.cs" />
     <Compile Include="ManageRole.cs" />
     <Compile Include="ManageUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

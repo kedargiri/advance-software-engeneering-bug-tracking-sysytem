@@ -28,42 +28,49 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageMember));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btndelete = new System.Windows.Forms.Button();
+            this.btnupdate = new System.Windows.Forms.Button();
+            this.btninsert = new System.Windows.Forms.Button();
+            this.btnbrowse = new System.Windows.Forms.Button();
+            this.pbprofilepicture = new System.Windows.Forms.PictureBox();
+            this.dtpdateofjoin = new System.Windows.Forms.DateTimePicker();
+            this.dtpdateofbirth = new System.Windows.Forms.DateTimePicker();
+            this.cmbgender = new System.Windows.Forms.ComboBox();
+            this.txtcontact = new System.Windows.Forms.TextBox();
+            this.txtmemberaddress = new System.Windows.Forms.TextBox();
+            this.txtmembername = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvmanagemember = new System.Windows.Forms.DataGridView();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtemail = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtdescription = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbprofilepicture)).BeginInit();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvmanagemember)).BeginInit();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.panel1);
-            this.groupBox1.Location = new System.Drawing.Point(3, 4);
+            this.groupBox1.Location = new System.Drawing.Point(3, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(813, 370);
+            this.groupBox1.Size = new System.Drawing.Size(813, 362);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Manage Member";
@@ -71,13 +78,17 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.txtdescription);
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.txtemail);
+            this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.dateTimePicker2);
-            this.panel1.Controls.Add(this.dateTimePicker1);
-            this.panel1.Controls.Add(this.comboBox1);
-            this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.dtpdateofjoin);
+            this.panel1.Controls.Add(this.dtpdateofbirth);
+            this.panel1.Controls.Add(this.cmbgender);
+            this.panel1.Controls.Add(this.txtcontact);
+            this.panel1.Controls.Add(this.txtmemberaddress);
+            this.panel1.Controls.Add(this.txtmembername);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
@@ -86,56 +97,123 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(9, 26);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(796, 335);
+            this.panel1.Size = new System.Drawing.Size(796, 357);
             this.panel1.TabIndex = 0;
             // 
-            // dateTimePicker2
+            // panel2
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(192, 216);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 27);
-            this.dateTimePicker2.TabIndex = 23;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.panel4);
+            this.panel2.Controls.Add(this.btndelete);
+            this.panel2.Controls.Add(this.btnupdate);
+            this.panel2.Controls.Add(this.btninsert);
+            this.panel2.Controls.Add(this.btnbrowse);
+            this.panel2.Location = new System.Drawing.Point(529, 26);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(226, 300);
+            this.panel2.TabIndex = 24;
             // 
-            // dateTimePicker1
+            // btndelete
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(192, 183);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 27);
-            this.dateTimePicker1.TabIndex = 22;
+            this.btndelete.Location = new System.Drawing.Point(13, 256);
+            this.btndelete.Name = "btndelete";
+            this.btndelete.Size = new System.Drawing.Size(190, 36);
+            this.btndelete.TabIndex = 3;
+            this.btndelete.Text = "Delete";
+            this.btndelete.UseVisualStyleBackColor = true;
+            this.btndelete.Click += new System.EventHandler(this.btndelete_Click);
             // 
-            // comboBox1
+            // btnupdate
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(192, 139);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(193, 29);
-            this.comboBox1.TabIndex = 21;
+            this.btnupdate.Location = new System.Drawing.Point(13, 219);
+            this.btnupdate.Name = "btnupdate";
+            this.btnupdate.Size = new System.Drawing.Size(190, 36);
+            this.btnupdate.TabIndex = 3;
+            this.btnupdate.Text = "Update";
+            this.btnupdate.UseVisualStyleBackColor = true;
+            this.btnupdate.Click += new System.EventHandler(this.btnupdate_Click);
             // 
-            // textBox3
+            // btninsert
             // 
-            this.textBox3.Location = new System.Drawing.Point(192, 101);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(193, 27);
-            this.textBox3.TabIndex = 20;
+            this.btninsert.Location = new System.Drawing.Point(13, 180);
+            this.btninsert.Name = "btninsert";
+            this.btninsert.Size = new System.Drawing.Size(190, 36);
+            this.btninsert.TabIndex = 2;
+            this.btninsert.Text = "Insert";
+            this.btninsert.UseVisualStyleBackColor = true;
+            this.btninsert.Click += new System.EventHandler(this.btninsert_Click);
             // 
-            // textBox2
+            // btnbrowse
             // 
-            this.textBox2.Location = new System.Drawing.Point(192, 59);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(193, 27);
-            this.textBox2.TabIndex = 19;
+            this.btnbrowse.Location = new System.Drawing.Point(13, 142);
+            this.btnbrowse.Name = "btnbrowse";
+            this.btnbrowse.Size = new System.Drawing.Size(190, 36);
+            this.btnbrowse.TabIndex = 1;
+            this.btnbrowse.Text = "Browse Image";
+            this.btnbrowse.UseVisualStyleBackColor = true;
+            this.btnbrowse.Click += new System.EventHandler(this.btnbrowse_Click);
             // 
-            // textBox1
+            // pbprofilepicture
             // 
-            this.textBox1.Location = new System.Drawing.Point(192, 26);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(193, 27);
-            this.textBox1.TabIndex = 18;
+            this.pbprofilepicture.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbprofilepicture.Image = ((System.Drawing.Image)(resources.GetObject("pbprofilepicture.Image")));
+            this.pbprofilepicture.Location = new System.Drawing.Point(0, 0);
+            this.pbprofilepicture.Name = "pbprofilepicture";
+            this.pbprofilepicture.Size = new System.Drawing.Size(216, 136);
+            this.pbprofilepicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbprofilepicture.TabIndex = 0;
+            this.pbprofilepicture.TabStop = false;
+            // 
+            // dtpdateofjoin
+            // 
+            this.dtpdateofjoin.Location = new System.Drawing.Point(192, 253);
+            this.dtpdateofjoin.Name = "dtpdateofjoin";
+            this.dtpdateofjoin.Size = new System.Drawing.Size(294, 27);
+            this.dtpdateofjoin.TabIndex = 23;
+            // 
+            // dtpdateofbirth
+            // 
+            this.dtpdateofbirth.Location = new System.Drawing.Point(192, 220);
+            this.dtpdateofbirth.Name = "dtpdateofbirth";
+            this.dtpdateofbirth.Size = new System.Drawing.Size(294, 27);
+            this.dtpdateofbirth.TabIndex = 22;
+            // 
+            // cmbgender
+            // 
+            this.cmbgender.FormattingEnabled = true;
+            this.cmbgender.Items.AddRange(new object[] {
+            "Male",
+            "Female"});
+            this.cmbgender.Location = new System.Drawing.Point(192, 176);
+            this.cmbgender.Name = "cmbgender";
+            this.cmbgender.Size = new System.Drawing.Size(294, 29);
+            this.cmbgender.TabIndex = 21;
+            // 
+            // txtcontact
+            // 
+            this.txtcontact.Location = new System.Drawing.Point(192, 101);
+            this.txtcontact.Name = "txtcontact";
+            this.txtcontact.Size = new System.Drawing.Size(294, 27);
+            this.txtcontact.TabIndex = 20;
+            // 
+            // txtmemberaddress
+            // 
+            this.txtmemberaddress.Location = new System.Drawing.Point(192, 59);
+            this.txtmemberaddress.Name = "txtmemberaddress";
+            this.txtmemberaddress.Size = new System.Drawing.Size(294, 27);
+            this.txtmemberaddress.TabIndex = 19;
+            // 
+            // txtmembername
+            // 
+            this.txtmembername.Location = new System.Drawing.Point(192, 26);
+            this.txtmembername.Name = "txtmembername";
+            this.txtmembername.Size = new System.Drawing.Size(294, 27);
+            this.txtmembername.TabIndex = 18;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(45, 221);
+            this.label6.Location = new System.Drawing.Point(45, 258);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(117, 21);
             this.label6.TabIndex = 17;
@@ -144,7 +222,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(42, 183);
+            this.label5.Location = new System.Drawing.Point(42, 220);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(120, 21);
             this.label5.TabIndex = 16;
@@ -153,7 +231,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(42, 139);
+            this.label4.Location = new System.Drawing.Point(42, 184);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(79, 21);
             this.label4.TabIndex = 15;
@@ -186,83 +264,70 @@
             this.label1.TabIndex = 12;
             this.label1.Text = "Member Name:-";
             // 
-            // panel2
-            // 
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.button4);
-            this.panel2.Controls.Add(this.button3);
-            this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Location = new System.Drawing.Point(529, 26);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(226, 300);
-            this.panel2.TabIndex = 24;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(13, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(201, 133);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(13, 142);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(190, 36);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Browse Image";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(13, 180);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(190, 36);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Insert";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(13, 219);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(190, 36);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Update";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(13, 256);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(190, 36);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Delete";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.dataGridView1);
+            this.panel3.Controls.Add(this.dgvmanagemember);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 380);
+            this.panel3.Location = new System.Drawing.Point(0, 400);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(820, 204);
+            this.panel3.Size = new System.Drawing.Size(820, 184);
             this.panel3.TabIndex = 2;
             // 
-            // dataGridView1
+            // dgvmanagemember
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(820, 204);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvmanagemember.AllowUserToAddRows = false;
+            this.dgvmanagemember.AllowUserToDeleteRows = false;
+            this.dgvmanagemember.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvmanagemember.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvmanagemember.Location = new System.Drawing.Point(0, -7);
+            this.dgvmanagemember.Name = "dgvmanagemember";
+            this.dgvmanagemember.ReadOnly = true;
+            this.dgvmanagemember.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvmanagemember.Size = new System.Drawing.Size(820, 188);
+            this.dgvmanagemember.TabIndex = 0;
+            this.dgvmanagemember.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvmanagemember_CellClick);
+            // 
+            // panel4
+            // 
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.pbprofilepicture);
+            this.panel4.Location = new System.Drawing.Point(3, 3);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(218, 138);
+            this.panel4.TabIndex = 4;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(45, 146);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(60, 21);
+            this.label7.TabIndex = 25;
+            this.label7.Text = "Email:-";
+            // 
+            // txtemail
+            // 
+            this.txtemail.Location = new System.Drawing.Point(192, 139);
+            this.txtemail.Name = "txtemail";
+            this.txtemail.Size = new System.Drawing.Size(294, 27);
+            this.txtemail.TabIndex = 26;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(42, 291);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(97, 21);
+            this.label8.TabIndex = 27;
+            this.label8.Text = "Description";
+            // 
+            // txtdescription
+            // 
+            this.txtdescription.Location = new System.Drawing.Point(192, 288);
+            this.txtdescription.Multiline = true;
+            this.txtdescription.Name = "txtdescription";
+            this.txtdescription.Size = new System.Drawing.Size(331, 56);
+            this.txtdescription.TabIndex = 28;
             // 
             // ManageMember
             // 
@@ -273,16 +338,18 @@
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ManageMember";
             this.Text = "ManageMember";
+            this.Load += new System.EventHandler(this.ManageMember_Load);
             this.groupBox1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbprofilepicture)).EndInit();
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvmanagemember)).EndInit();
+            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -292,17 +359,17 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btndelete;
+        private System.Windows.Forms.Button btnupdate;
+        private System.Windows.Forms.Button btninsert;
+        private System.Windows.Forms.Button btnbrowse;
+        private System.Windows.Forms.PictureBox pbprofilepicture;
+        private System.Windows.Forms.DateTimePicker dtpdateofjoin;
+        private System.Windows.Forms.DateTimePicker dtpdateofbirth;
+        private System.Windows.Forms.ComboBox cmbgender;
+        private System.Windows.Forms.TextBox txtcontact;
+        private System.Windows.Forms.TextBox txtmemberaddress;
+        private System.Windows.Forms.TextBox txtmembername;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
@@ -310,7 +377,11 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.DataGridView dataGridView1;
-
+        private System.Windows.Forms.DataGridView dgvmanagemember;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.TextBox txtemail;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtdescription;
+        private System.Windows.Forms.Label label8;
     }
 }
