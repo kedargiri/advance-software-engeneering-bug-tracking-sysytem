@@ -34,6 +34,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.button9 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.lblusername = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.btnclonegithub = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -47,7 +49,6 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnldisplay = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -100,6 +101,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(39)))), ((int)(((byte)(4)))));
+            this.panel3.Controls.Add(this.lblusername);
             this.panel3.Controls.Add(this.button1);
             this.panel3.Controls.Add(this.btnclonegithub);
             this.panel3.Controls.Add(this.panel6);
@@ -115,6 +117,30 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(245, 692);
             this.panel3.TabIndex = 13;
+            // 
+            // lblusername
+            // 
+            this.lblusername.AutoSize = true;
+            this.lblusername.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblusername.ForeColor = System.Drawing.Color.DarkOrange;
+            this.lblusername.Location = new System.Drawing.Point(37, 631);
+            this.lblusername.Name = "lblusername";
+            this.lblusername.Size = new System.Drawing.Size(0, 22);
+            this.lblusername.TabIndex = 25;
+            // 
+            // button1
+            // 
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(0, 176);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(242, 56);
+            this.button1.TabIndex = 24;
+            this.button1.Text = "Manage Designation";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // btnclonegithub
             // 
@@ -270,20 +296,6 @@
             this.pnldisplay.Size = new System.Drawing.Size(820, 584);
             this.pnldisplay.TabIndex = 17;
             // 
-            // button1
-            // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(0, 176);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(242, 56);
-            this.button1.TabIndex = 24;
-            this.button1.Text = "Manage Designation";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -304,6 +316,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainForm";
             this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -323,14 +336,15 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnregisterbugsolution;
         private System.Windows.Forms.Button registerbug;
-        private System.Windows.Forms.Button btnmanageproject;
-        private System.Windows.Forms.Button btnmanagemember;
-        private System.Windows.Forms.Button btnmanageuser;
         private System.Windows.Forms.Panel pnldisplay;
-        private System.Windows.Forms.Button btnprojectmember;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button btnclonegithub;
-        private System.Windows.Forms.Button button1;
+        public System.Windows.Forms.Button btnmanageproject;
+        public System.Windows.Forms.Button btnmanagemember;
+        public System.Windows.Forms.Button btnmanageuser;
+        public System.Windows.Forms.Button btnprojectmember;
+        public System.Windows.Forms.Label lblusername;
+        public System.Windows.Forms.Button button1;
     }
 }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 using DataAccessLayer;
 using BusinessLogicLayer;
 
@@ -79,6 +80,18 @@ namespace asebugtrackingsystem
 
         private void dgvmanagemember_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            id = Convert.ToInt32(dgvmanagemember.SelectedRows[0].Cells["memberId"].Value.ToString());
+            txtmembername.Text = dgvmanagemember.SelectedRows[0].Cells["memberName"].Value.ToString();
+            txtmemberaddress.Text = dgvmanagemember.SelectedRows[0].Cells["memberAddress"].Value.ToString();
+            txtcontact.Text = dgvmanagemember.SelectedRows[0].Cells["contactNumber"].Value.ToString();
+            cmbgender.Text = dgvmanagemember.SelectedRows[0].Cells["gender"].Value.ToString();
+            dtpdateofjoin.Text = dgvmanagemember.SelectedRows[0].Cells["dateOfJoin"].Value.ToString();
+            dtpdateofbirth.Text = dgvmanagemember.SelectedRows[0].Cells["dateOfBirth"].Value.ToString();
+            txtdescription.Text = dgvmanagemember.SelectedRows[0].Cells["memberDesignation"].Value.ToString();
+            txtemail.Text = dgvmanagemember.SelectedRows[0].Cells["emailAddress"].Value.ToString();
+
+            MemoryStream memoryStream = new MemoryStream((byte[])dgvmanagemember.SelectedRows[0].Cells["profilePicture"].Value);
+            pbprofilepicture.Image = Image.FromStream(memoryStream);
 
         }
 
@@ -89,7 +102,7 @@ namespace asebugtrackingsystem
                 bool x = blc.ManageMembers(id, txtmembername.Text, txtmemberaddress.Text, txtcontact.Text, txtemail.Text, cmbgender.Text, Convert.ToDateTime(dtpdateofbirth.Text), Convert.ToDateTime(dtpdateofjoin.Text), txtdescription.Text, HelperClass.imageConverter(pbprofilepicture), 2);
                 if (x == true)
                 {
-                    MessageBox.Show("NEW MEMBER HAS SUCCESSFULLY CREATED");
+                    MessageBox.Show("MEMBER was SUCCESSFULLY updated");
                     dgvmanagemember.DataSource = get.getAllMembers();
                     HelperClass.MakeFieldBlank(panel1);
                     pbprofilepicture.Image = null;

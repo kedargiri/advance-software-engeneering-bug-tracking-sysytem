@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using BusinessLogicLayer;
 using DataAccessLayer;
 using System.IO;
+using WinFormsSyntaxHighlighter;
+using System.Text.RegularExpressions;
 
 namespace asebugtrackingsystem
 {
@@ -18,6 +20,23 @@ namespace asebugtrackingsystem
         public RegisterBug()
         {
             InitializeComponent();
+            var syntaxHighlighter = new SyntaxHighlighter(txtcode);
+            // multi-line comments
+            syntaxHighlighter.AddPattern(new PatternDefinition(new Regex(@"/\*(.|[\r\n])*?\*/", RegexOptions.Multiline | RegexOptions.Compiled)), new SyntaxStyle(Color.DarkSeaGreen, false, true));
+            // singlie-line comments
+            syntaxHighlighter.AddPattern(new PatternDefinition(new Regex(@"//.*?$", RegexOptions.Multiline | RegexOptions.Compiled)), new SyntaxStyle(Color.Green, false, true));
+            // numbers
+            syntaxHighlighter.AddPattern(new PatternDefinition(@"\d+\.\d+|\d+"), new SyntaxStyle(Color.Purple));
+            // double quote strings
+            syntaxHighlighter.AddPattern(new PatternDefinition(@"\""([^""]|\""\"")+\"""), new SyntaxStyle(Color.Red));
+            // single quote strings
+            syntaxHighlighter.AddPattern(new PatternDefinition(@"\'([^']|\'\')+\'"), new SyntaxStyle(Color.Salmon));
+            // keywords1
+            syntaxHighlighter.AddPattern(new PatternDefinition("for", "foreach", "int", "var"), new SyntaxStyle(Color.Blue));
+            // keywords2
+            syntaxHighlighter.AddPattern(new CaseInsensitivePatternDefinition("public", "partial", "class", "void"), new SyntaxStyle(Color.Navy, true, false));
+            // operators
+            syntaxHighlighter.AddPattern(new PatternDefinition("+", "-", ">", "<", "&", "|"), new SyntaxStyle(Color.Brown));
         }
         BusinessLogicClass blc = new BusinessLogicClass();
 
@@ -28,7 +47,7 @@ namespace asebugtrackingsystem
         {
             try
             {
-                bool result = blc.manageBugs(0,Convert.ToDateTime(dtpdate.Text), Convert.ToInt32(cmbidentifiedbug.SelectedValue.ToString()), Convert.ToInt32(cmbproject.SelectedValue.ToString()), txtclassliabrary.Text,txtclass.Text, txtmethord.Text, txtblock.Text, txtlinenumber.Text, txtbugdetails.Text, HelperClass.imageConverter(pbsecrreshoterror), txtcode.Text, 1);
+                bool result = blc.manageBugs(0,Convert.ToDateTime(dtpdate.Text), Convert.ToInt32(cmbidentifiedbug.SelectedValue.ToString()), Convert.ToInt32(cmbproject.SelectedValue.ToString()), txtclassliabrary.Text,txtclass.Text, txtmethord.Text, txtblock.Text, txtlinenumber.Text, txtbugdetails.Text, HelperClass.imageConverter(pbsecrreshoterror), txtcode.Rtf, 1);
                 if (result == true)
                 {
                     MessageBox.Show("Successfull on adding bug");
@@ -92,7 +111,7 @@ namespace asebugtrackingsystem
         {
             try
             {
-                bool result = blc.manageBugs(id, Convert.ToDateTime(dtpdate.Text), Convert.ToInt32(cmbidentifiedbug.SelectedValue.ToString()), Convert.ToInt32(cmbproject.SelectedValue.ToString()), txtclassliabrary.Text, txtclass.Text, txtmethord.Text, txtblock.Text, txtlinenumber.Text, txtbugdetails.Text, HelperClass.imageConverter(pbsecrreshoterror), txtcode.Text, 2);
+                bool result = blc.manageBugs(id, Convert.ToDateTime(dtpdate.Text), Convert.ToInt32(cmbidentifiedbug.SelectedValue.ToString()), Convert.ToInt32(cmbproject.SelectedValue.ToString()), txtclassliabrary.Text, txtclass.Text, txtmethord.Text, txtblock.Text, txtlinenumber.Text, txtbugdetails.Text, HelperClass.imageConverter(pbsecrreshoterror), txtcode.Rtf, 2);
                 if (result == true)
                 {
                     MessageBox.Show("Successfull on updating bug");
@@ -115,7 +134,7 @@ namespace asebugtrackingsystem
         {
             try
             {
-                bool result = blc.manageBugs(id, Convert.ToDateTime(dtpdate.Text), Convert.ToInt32(cmbidentifiedbug.SelectedValue.ToString()), Convert.ToInt32(cmbproject.SelectedValue.ToString()), txtclassliabrary.Text, txtclass.Text, txtmethord.Text, txtblock.Text, txtlinenumber.Text, txtbugdetails.Text, HelperClass.imageConverter(pbsecrreshoterror), txtcode.Text, 3);
+                bool result = blc.manageBugs(id, Convert.ToDateTime(dtpdate.Text), Convert.ToInt32(cmbidentifiedbug.SelectedValue.ToString()), Convert.ToInt32(cmbproject.SelectedValue.ToString()), txtclassliabrary.Text, txtclass.Text, txtmethord.Text, txtblock.Text, txtlinenumber.Text, txtbugdetails.Text, HelperClass.imageConverter(pbsecrreshoterror), txtcode.Rtf, 3);
                 if (result == true)
                 {
                     MessageBox.Show("Successfull on deleting bug details");
@@ -150,13 +169,18 @@ namespace asebugtrackingsystem
                 txtbugdetails.Text = dgvbugentry.SelectedRows[0].Cells["bugDetails"].Value.ToString();
                 MemoryStream memoryStream = new MemoryStream((byte[])dgvbugentry.SelectedRows[0].Cells["snapShotOfBugMessage"].Value);
                 pbsecrreshoterror.Image = Image.FromStream(memoryStream);
-                txtcode.Text = dgvbugentry.SelectedRows[0].Cells["codeContainingBug"].Value.ToString();
+                txtcode.Rtf = dgvbugentry.SelectedRows[0].Cells["codeContainingBug"].Value.ToString();
             }
             catch (Exception ex)
             {
 
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
     }

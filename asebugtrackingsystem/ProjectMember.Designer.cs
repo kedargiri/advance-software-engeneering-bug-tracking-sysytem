@@ -130,6 +130,7 @@
             // 
             // cmbmemberrole
             // 
+            this.cmbmemberrole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbmemberrole.FormattingEnabled = true;
             this.cmbmemberrole.Location = new System.Drawing.Point(128, 114);
             this.cmbmemberrole.Name = "cmbmemberrole";
@@ -138,6 +139,7 @@
             // 
             // cmbmember
             // 
+            this.cmbmember.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbmember.FormattingEnabled = true;
             this.cmbmember.Location = new System.Drawing.Point(128, 68);
             this.cmbmember.Name = "cmbmember";
@@ -173,6 +175,7 @@
             // 
             // cmbproject
             // 
+            this.cmbproject.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbproject.FormattingEnabled = true;
             this.cmbproject.Location = new System.Drawing.Point(128, 18);
             this.cmbproject.Name = "cmbproject";

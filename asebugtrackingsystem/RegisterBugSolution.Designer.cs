@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.txtcode = new System.Windows.Forms.RichTextBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.dgvregisterbugsolution = new System.Windows.Forms.DataGridView();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -49,9 +51,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.txtcode = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvregisterbugsolution)).BeginInit();
             this.panel4.SuspendLayout();
@@ -59,7 +60,6 @@
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbscreenshot)).BeginInit();
             this.panel2.SuspendLayout();
-            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -74,6 +74,24 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "RegisterBugSolution";
+            // 
+            // panel6
+            // 
+            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel6.Controls.Add(this.txtcode);
+            this.panel6.Location = new System.Drawing.Point(3, 272);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(799, 123);
+            this.panel6.TabIndex = 3;
+            // 
+            // txtcode
+            // 
+            this.txtcode.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtcode.Location = new System.Drawing.Point(0, 0);
+            this.txtcode.Name = "txtcode";
+            this.txtcode.Size = new System.Drawing.Size(797, 121);
+            this.txtcode.TabIndex = 1;
+            this.txtcode.Text = "";
             // 
             // panel5
             // 
@@ -94,8 +112,10 @@
             this.dgvregisterbugsolution.Location = new System.Drawing.Point(0, 0);
             this.dgvregisterbugsolution.Name = "dgvregisterbugsolution";
             this.dgvregisterbugsolution.ReadOnly = true;
+            this.dgvregisterbugsolution.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvregisterbugsolution.Size = new System.Drawing.Size(799, 179);
             this.dgvregisterbugsolution.TabIndex = 0;
+            this.dgvregisterbugsolution.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvregisterbugsolution_CellClick);
             // 
             // panel4
             // 
@@ -116,6 +136,7 @@
             this.btndelete.TabIndex = 2;
             this.btndelete.Text = "Delete";
             this.btndelete.UseVisualStyleBackColor = true;
+            this.btndelete.Click += new System.EventHandler(this.btndelete_Click);
             // 
             // btnedit
             // 
@@ -125,6 +146,7 @@
             this.btnedit.TabIndex = 1;
             this.btnedit.Text = "Edit";
             this.btnedit.UseVisualStyleBackColor = true;
+            this.btnedit.Click += new System.EventHandler(this.btnedit_Click);
             // 
             // btnadd
             // 
@@ -161,6 +183,7 @@
             this.pbscreenshot.Location = new System.Drawing.Point(0, 0);
             this.pbscreenshot.Name = "pbscreenshot";
             this.pbscreenshot.Size = new System.Drawing.Size(367, 193);
+            this.pbscreenshot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbscreenshot.TabIndex = 0;
             this.pbscreenshot.TabStop = false;
             // 
@@ -184,6 +207,7 @@
             // 
             // cmbbugdetail
             // 
+            this.cmbbugdetail.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbbugdetail.FormattingEnabled = true;
             this.cmbbugdetail.Location = new System.Drawing.Point(124, 114);
             this.cmbbugdetail.Name = "cmbbugdetail";
@@ -199,6 +223,7 @@
             // 
             // cmbproject
             // 
+            this.cmbproject.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbproject.FormattingEnabled = true;
             this.cmbproject.Location = new System.Drawing.Point(124, 78);
             this.cmbproject.Name = "cmbproject";
@@ -214,6 +239,7 @@
             // 
             // cmbbugsolution
             // 
+            this.cmbbugsolution.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbbugsolution.FormattingEnabled = true;
             this.cmbbugsolution.Location = new System.Drawing.Point(123, 8);
             this.cmbbugsolution.Name = "cmbbugsolution";
@@ -265,23 +291,6 @@
             this.label1.TabIndex = 16;
             this.label1.Text = "Bug Solved By";
             // 
-            // panel6
-            // 
-            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel6.Controls.Add(this.txtcode);
-            this.panel6.Location = new System.Drawing.Point(3, 272);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(799, 123);
-            this.panel6.TabIndex = 3;
-            // 
-            // txtcode
-            // 
-            this.txtcode.Location = new System.Drawing.Point(0, 3);
-            this.txtcode.Multiline = true;
-            this.txtcode.Name = "txtcode";
-            this.txtcode.Size = new System.Drawing.Size(793, 115);
-            this.txtcode.TabIndex = 0;
-            // 
             // RegisterBugSolution
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
@@ -295,6 +304,7 @@
             this.Text = "RegisterBugSolution";
             this.Load += new System.EventHandler(this.RegisterBugSolution_Load);
             this.groupBox1.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvregisterbugsolution)).EndInit();
             this.panel4.ResumeLayout(false);
@@ -303,8 +313,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbscreenshot)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -333,6 +341,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.TextBox txtcode;
+        private System.Windows.Forms.RichTextBox txtcode;
     }
 }

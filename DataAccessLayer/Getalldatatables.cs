@@ -7,7 +7,7 @@ using System.Data;
 using System.Data.SqlClient;
 namespace DataAccessLayer
 {
-   public class Getalldatatables
+    public class Getalldatatables
     {
 
         SqlConnection conn = new SqlConnection(ConnectionClass.ConnectionString);
@@ -59,7 +59,9 @@ namespace DataAccessLayer
             try
             {
                 DataTable dt = new DataTable();
-                SqlCommand cmd = new SqlCommand("select userRole from UserRoleTable where userRoleId=(select userRoleId from UserTable where userName=@userName and userPassword=@userPassword)", conn);
+
+                SqlCommand cmd = new SqlCommand("select userRoleId,userName,userPassword from UserTable where userName=@userName,userPassword=@userPassword", conn);
+                //SqlCommand cmd = new SqlCommand("select userRole from UserRoleTable where userRoleId=(select userRoleId from UserTable where userName=@userName and userPassword=@userPassword)", conn);
                 cmd.CommandType = CommandType.Text;
                 cmd.Parameters.AddWithValue("@userName", userName);
                 cmd.Parameters.AddWithValue("@userPassword", userPassword);
@@ -191,7 +193,7 @@ namespace DataAccessLayer
             {
                 DataTable dt = new DataTable();
                 SqlCommand cmd = new SqlCommand("Select * from MemberInProjectTable where projectId=@projectId", conn);
-               cmd.CommandType = CommandType.Text;
+                cmd.CommandType = CommandType.Text;
                 cmd.Parameters.AddWithValue("@projectId", projectId);
                 conn.Open();
                 SqlDataReader dr = cmd.ExecuteReader();
@@ -212,7 +214,7 @@ namespace DataAccessLayer
             try
             {
                 DataTable dt = new DataTable();
-                SqlCommand cmd = new SqlCommand("Select count(*) from ProjectMemberTable",conn);
+                SqlCommand cmd = new SqlCommand("Select count(*) from ProjectMemberTable", conn);
                 conn.Open();
                 SqlDataReader dr = cmd.ExecuteReader();
                 dt.Load(dr);
@@ -299,7 +301,7 @@ namespace DataAccessLayer
                 conn.Open();
                 SqlDataReader dr = cmd.ExecuteReader();
                 dt.Load(dr);
-               conn.Close();
+                conn.Close();
                 return dt;
             }
             catch (Exception ex)
@@ -337,7 +339,7 @@ namespace DataAccessLayer
             try
             {
                 DataTable dt = new DataTable();
-                SqlCommand cmd = new SqlCommand("select b.bugSolutionId,b.dateOfSolutionIdentified,m.memberName, p.projectName,e.bugDetails,e.snapShotOfBugMessage,b.solutionDetails,b.codeAfterFixingBug from BugSolutionTable b,BugEntryTable e, ProjectTable p, MemberTable m where b.bugId=e.bugId and b.projectId=p.projectId and b.memberId=e.memberId", conn);
+                SqlCommand cmd = new SqlCommand("select b.bugSolutionId,b.dateOfSolutionIdentified,m.memberName, p.projectName,e.bugDetails,e.snapShotOfBugMessage,b.solutionDetails,b.codeAfterFixingBug from BugSolutionTable b,BugEntryTable e, ProjectTable p, MemberTable m where b.bugId=e.bugId and b.projectId=p.projectId and b.memberId=m.memberId", conn);
                 cmd.CommandType = CommandType.Text;
                 conn.Open();
                 SqlDataReader dr = cmd.ExecuteReader();
@@ -373,12 +375,77 @@ namespace DataAccessLayer
             }
             finally { conn.Close(); }
         }
+        public int countNumberOfProjects()
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                SqlCommand cmd = new SqlCommand("Select count(*) from ProjectTable", conn);
+                conn.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                dt.Load(dr);
+                conn.Close();
+                int numberOfProjects = Convert.ToInt32(dt.Rows[0][0].ToString());
+                return numberOfProjects;
+            }
+            catch (Exception ex)
+            {
 
+                throw ex;
+            }
+            finally { conn.Close(); }
+        }
 
+        public int totalMember()
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                SqlCommand cmd = new SqlCommand("Select count(*) from MemberTable", conn);
+                conn.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                dt.Load(dr);
+                conn.Close();
+                int Total = Convert.ToInt32(dt.Rows[0][0].ToString());
+                return Total;
+            }
+            catch (Exception ex)
+            {
 
+                throw ex;
+            }
+            finally { conn.Close(); }
 
+        }
+
+        public string Login(String userName, String userPassword)
+        {
+            try
+            {
+                string role = "";
+                DataTable dt = new DataTable();
+              //  select userName, userPassword from UserTable where userName = @userName and userPassword = @userPassword
+                SqlCommand cmd = new SqlCommand("select ur.userRole,u.userName, u.userPassword, u.userRoleId from UserTable u, UserRoleTable ur where u.userRoleId=ur.userRoleId and userName=@userName and userPassword=@userPassword ", conn);
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.AddWithValue("@userName", userName);
+                cmd.Parameters.AddWithValue("@userPassword", userPassword);
+                conn.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                dt.Load(dr);
+                conn.Close();
+                if (dt.Rows.Count > 0)
+                    role = dt.Rows[0][0].ToString();
+                else
+                    role = "";
+                return role;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally { conn.Close(); }
+        }
     }
-
-
 }
 

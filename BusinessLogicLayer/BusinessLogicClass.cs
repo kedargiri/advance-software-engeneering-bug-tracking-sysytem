@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DataAccessLayer;
+using System.Data;
 namespace BusinessLogicLayer
 {
     public class BusinessLogicClass
@@ -15,6 +16,7 @@ namespace BusinessLogicLayer
         ProjectMemberClass PMC = new ProjectMemberClass();
         BugEntryClass bec = new BugEntryClass();
         RegisterBugSolutionClass rb = new RegisterBugSolutionClass();
+        Getalldatatables get = new Getalldatatables();
         public bool ManageRoles(int roleid, string userrolename, string roledescription, int mode)
         {
             try
@@ -202,8 +204,7 @@ namespace BusinessLogicLayer
             }
         }
 
-
-
+        
     }  
     }
 

@@ -36,10 +36,11 @@
             this.btnedit = new System.Windows.Forms.Button();
             this.btnadd = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.txtcode = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtbrowse = new System.Windows.Forms.Button();
+            this.txtclass = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.txtbugdetails = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txtlinenumber = new System.Windows.Forms.TextBox();
@@ -58,8 +59,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.txtclass = new System.Windows.Forms.TextBox();
+            this.txtcode = new System.Windows.Forms.RichTextBox();
             this.groupBox1.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvbugentry)).BeginInit();
@@ -73,6 +73,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.panel5);
+            this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.panel4);
             this.groupBox1.Controls.Add(this.panel3);
             this.groupBox1.Controls.Add(this.panel1);
@@ -82,6 +83,7 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Bug Entry";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // panel5
             // 
@@ -151,24 +153,15 @@
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.txtcode);
-            this.panel3.Controls.Add(this.label7);
-            this.panel3.Location = new System.Drawing.Point(9, 347);
+            this.panel3.Location = new System.Drawing.Point(63, 347);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(792, 66);
+            this.panel3.Size = new System.Drawing.Size(738, 66);
             this.panel3.TabIndex = 1;
-            // 
-            // txtcode
-            // 
-            this.txtcode.Location = new System.Drawing.Point(147, 5);
-            this.txtcode.Multiline = true;
-            this.txtcode.Name = "txtcode";
-            this.txtcode.Size = new System.Drawing.Size(625, 56);
-            this.txtcode.TabIndex = 12;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(29, 28);
+            this.label7.Location = new System.Drawing.Point(11, 367);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(54, 21);
             this.label7.TabIndex = 11;
@@ -211,6 +204,22 @@
             this.txtbrowse.Text = "Browse";
             this.txtbrowse.UseVisualStyleBackColor = true;
             this.txtbrowse.Click += new System.EventHandler(this.txtbrowse_Click);
+            // 
+            // txtclass
+            // 
+            this.txtclass.Location = new System.Drawing.Point(150, 163);
+            this.txtclass.Name = "txtclass";
+            this.txtclass.Size = new System.Drawing.Size(221, 27);
+            this.txtclass.TabIndex = 18;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(13, 166);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(49, 21);
+            this.label10.TabIndex = 17;
+            this.label10.Text = "Class";
             // 
             // txtbugdetails
             // 
@@ -296,6 +305,7 @@
             // 
             // cmbproject
             // 
+            this.cmbproject.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbproject.FormattingEnabled = true;
             this.cmbproject.Location = new System.Drawing.Point(150, 87);
             this.cmbproject.Name = "cmbproject";
@@ -304,6 +314,7 @@
             // 
             // cmbidentifiedbug
             // 
+            this.cmbidentifiedbug.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbidentifiedbug.FormattingEnabled = true;
             this.cmbidentifiedbug.Location = new System.Drawing.Point(150, 47);
             this.cmbidentifiedbug.Name = "cmbidentifiedbug";
@@ -362,21 +373,14 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Date";
             // 
-            // label10
+            // txtcode
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(13, 166);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(49, 21);
-            this.label10.TabIndex = 17;
-            this.label10.Text = "Class";
-            // 
-            // txtclass
-            // 
-            this.txtclass.Location = new System.Drawing.Point(150, 163);
-            this.txtclass.Name = "txtclass";
-            this.txtclass.Size = new System.Drawing.Size(221, 27);
-            this.txtclass.TabIndex = 18;
+            this.txtcode.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtcode.Location = new System.Drawing.Point(0, 0);
+            this.txtcode.Name = "txtcode";
+            this.txtcode.Size = new System.Drawing.Size(736, 64);
+            this.txtcode.TabIndex = 12;
+            this.txtcode.Text = "";
             // 
             // RegisterBug
             // 
@@ -391,11 +395,11 @@
             this.Text = "RegisterBug";
             this.Load += new System.EventHandler(this.RegisterBug_Load);
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvbugentry)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -414,7 +418,6 @@
         private System.Windows.Forms.Button btnedit;
         private System.Windows.Forms.Button btnadd;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox txtcode;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
@@ -438,5 +441,6 @@
         private System.Windows.Forms.Button txtbrowse;
         private System.Windows.Forms.TextBox txtclass;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.RichTextBox txtcode;
     }
 }

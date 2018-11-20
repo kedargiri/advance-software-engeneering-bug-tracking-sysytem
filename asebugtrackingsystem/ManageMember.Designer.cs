@@ -31,12 +31,17 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageMember));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtdescription = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtemail = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.pbprofilepicture = new System.Windows.Forms.PictureBox();
             this.btndelete = new System.Windows.Forms.Button();
             this.btnupdate = new System.Windows.Forms.Button();
             this.btninsert = new System.Windows.Forms.Button();
             this.btnbrowse = new System.Windows.Forms.Button();
-            this.pbprofilepicture = new System.Windows.Forms.PictureBox();
             this.dtpdateofjoin = new System.Windows.Forms.DateTimePicker();
             this.dtpdateofbirth = new System.Windows.Forms.DateTimePicker();
             this.cmbgender = new System.Windows.Forms.ComboBox();
@@ -51,18 +56,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dgvmanagemember = new System.Windows.Forms.DataGridView();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtemail = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtdescription = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbprofilepicture)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvmanagemember)).BeginInit();
-            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -100,6 +100,39 @@
             this.panel1.Size = new System.Drawing.Size(796, 357);
             this.panel1.TabIndex = 0;
             // 
+            // txtdescription
+            // 
+            this.txtdescription.Location = new System.Drawing.Point(192, 288);
+            this.txtdescription.Multiline = true;
+            this.txtdescription.Name = "txtdescription";
+            this.txtdescription.Size = new System.Drawing.Size(331, 56);
+            this.txtdescription.TabIndex = 28;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(42, 291);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(97, 21);
+            this.label8.TabIndex = 27;
+            this.label8.Text = "Description";
+            // 
+            // txtemail
+            // 
+            this.txtemail.Location = new System.Drawing.Point(192, 139);
+            this.txtemail.Name = "txtemail";
+            this.txtemail.Size = new System.Drawing.Size(294, 27);
+            this.txtemail.TabIndex = 26;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(45, 146);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(60, 21);
+            this.label7.TabIndex = 25;
+            this.label7.Text = "Email:-";
+            // 
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -112,6 +145,26 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(226, 300);
             this.panel2.TabIndex = 24;
+            // 
+            // panel4
+            // 
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.pbprofilepicture);
+            this.panel4.Location = new System.Drawing.Point(3, 3);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(218, 138);
+            this.panel4.TabIndex = 4;
+            // 
+            // pbprofilepicture
+            // 
+            this.pbprofilepicture.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbprofilepicture.Image = ((System.Drawing.Image)(resources.GetObject("pbprofilepicture.Image")));
+            this.pbprofilepicture.Location = new System.Drawing.Point(0, 0);
+            this.pbprofilepicture.Name = "pbprofilepicture";
+            this.pbprofilepicture.Size = new System.Drawing.Size(216, 136);
+            this.pbprofilepicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbprofilepicture.TabIndex = 0;
+            this.pbprofilepicture.TabStop = false;
             // 
             // btndelete
             // 
@@ -153,17 +206,6 @@
             this.btnbrowse.UseVisualStyleBackColor = true;
             this.btnbrowse.Click += new System.EventHandler(this.btnbrowse_Click);
             // 
-            // pbprofilepicture
-            // 
-            this.pbprofilepicture.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbprofilepicture.Image = ((System.Drawing.Image)(resources.GetObject("pbprofilepicture.Image")));
-            this.pbprofilepicture.Location = new System.Drawing.Point(0, 0);
-            this.pbprofilepicture.Name = "pbprofilepicture";
-            this.pbprofilepicture.Size = new System.Drawing.Size(216, 136);
-            this.pbprofilepicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbprofilepicture.TabIndex = 0;
-            this.pbprofilepicture.TabStop = false;
-            // 
             // dtpdateofjoin
             // 
             this.dtpdateofjoin.Location = new System.Drawing.Point(192, 253);
@@ -180,6 +222,7 @@
             // 
             // cmbgender
             // 
+            this.cmbgender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbgender.FormattingEnabled = true;
             this.cmbgender.Items.AddRange(new object[] {
             "Male",
@@ -287,48 +330,6 @@
             this.dgvmanagemember.TabIndex = 0;
             this.dgvmanagemember.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvmanagemember_CellClick);
             // 
-            // panel4
-            // 
-            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Controls.Add(this.pbprofilepicture);
-            this.panel4.Location = new System.Drawing.Point(3, 3);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(218, 138);
-            this.panel4.TabIndex = 4;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(45, 146);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(60, 21);
-            this.label7.TabIndex = 25;
-            this.label7.Text = "Email:-";
-            // 
-            // txtemail
-            // 
-            this.txtemail.Location = new System.Drawing.Point(192, 139);
-            this.txtemail.Name = "txtemail";
-            this.txtemail.Size = new System.Drawing.Size(294, 27);
-            this.txtemail.TabIndex = 26;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(42, 291);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(97, 21);
-            this.label8.TabIndex = 27;
-            this.label8.Text = "Description";
-            // 
-            // txtdescription
-            // 
-            this.txtdescription.Location = new System.Drawing.Point(192, 288);
-            this.txtdescription.Multiline = true;
-            this.txtdescription.Name = "txtdescription";
-            this.txtdescription.Size = new System.Drawing.Size(331, 56);
-            this.txtdescription.TabIndex = 28;
-            // 
             // ManageMember
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
@@ -346,10 +347,10 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbprofilepicture)).EndInit();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvmanagemember)).EndInit();
-            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
