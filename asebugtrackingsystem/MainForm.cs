@@ -93,5 +93,45 @@ namespace asebugtrackingsystem
             pnldisplay.Controls.Add(mr);
             mr.Show();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            MainForm frm = new MainForm();
+            frm.Show();
+        }
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            MainForm frm = new MainForm();
+            this.Hide();
+            frm.Show();
+
+
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            MainForm frm = new MainForm();
+            frm.Show();
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+            this.WindowState = FormWindowState.Minimized;
+          //  MainForm frm = new MainForm();
+          // frm.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnclonegithub_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/kedargiri/advance-software-engeneering-bug-tracking-sysytem");
+        }
+
+        private void button5_Click_1(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("E:/Assignment/Advance Software Engineering/ASE/WELCOME to Help Section of BTS.pdf");
+        }
     }
 }

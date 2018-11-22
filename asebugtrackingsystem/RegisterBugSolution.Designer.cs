@@ -213,6 +213,7 @@
             this.cmbbugdetail.Name = "cmbbugdetail";
             this.cmbbugdetail.Size = new System.Drawing.Size(292, 29);
             this.cmbbugdetail.TabIndex = 25;
+            this.cmbbugdetail.SelectedIndexChanged += new System.EventHandler(this.cmbbugdetail_SelectedIndexChanged);
             // 
             // txtsolution
             // 

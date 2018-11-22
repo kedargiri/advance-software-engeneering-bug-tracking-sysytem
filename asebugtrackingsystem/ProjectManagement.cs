@@ -21,31 +21,53 @@ namespace asebugtrackingsystem
         BusinessLogicClass blc = new BusinessLogicClass();
         Getalldatatables get = new Getalldatatables();
         public int id;
-        
-      
+
+
 
         private void btnadd_Click(object sender, EventArgs e)
         {
-            try
+            if (txtdescription.Text == "")
             {
-                bool result = blc.manageProjects(0, txtprojectname.Text, Convert.ToDateTime(dtpstartdate.Text), Convert.ToDateTime(dtpenddate.Text), txtdescription.Text, 1);
-                if(result==true)
-                {
-                    MessageBox.Show("New Project Successfully created");
-                    dgvprojectmanagement.DataSource = get.getAllProjects();
-                    HelperClass.MakeFieldBlank(panel1);
-                }
-                else
-                {
-                    MessageBox.Show("Error on Creating Project");
-                }
+                MessageBox.Show("Provide Description");
             }
-            catch (Exception ex)
+            else if (txtprojectname.Text == "")
             {
+                MessageBox.Show("Provide Project");
+            }
+            else if (dtpstartdate == dtpenddate)
+            {
+                DialogResult dialogResult = MessageBox.Show("Are you sure the project will complete in a single day", "Consider the Project Interval", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialogResult == DialogResult.No)
+                {
+                    dtpenddate.Focus();
 
-                MessageBox.Show(ex.Message);
+                }
+
+
+
+
+
+                try
+                {
+                    bool result = blc.manageProjects(0, txtprojectname.Text, Convert.ToDateTime(dtpstartdate.Text), Convert.ToDateTime(dtpenddate.Text), txtdescription.Text, 1);
+                    if (result == true)
+                    {
+                        MessageBox.Show("New Project Successfully created");
+                        dgvprojectmanagement.DataSource = get.getAllProjects();
+                        HelperClass.MakeFieldBlank(panel1);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error on Creating Project");
+                    }
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show(ex.Message);
+                }
+
             }
-           
         }
 
         private void ProjectManagement_Load(object sender, EventArgs e)

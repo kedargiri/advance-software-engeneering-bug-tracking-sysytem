@@ -25,6 +25,27 @@ namespace asebugtrackingsystem
 
         private void btnadd_Click(object sender, EventArgs e)
         {
+            if (txtdescription.Text == "")
+            {
+                MessageBox.Show("provide Description");
+            }
+            else if (cmbmember.Text == "")
+            {
+                MessageBox.Show("Select member");
+            }
+            else if (cmbmemberrole.Text == "")
+            {
+                MessageBox.Show("Select Member Role");
+            }
+            else if (cmbproject.Text == "")
+            {
+                MessageBox.Show("Select Project");
+            }
+            else { 
+
+
+
+
             try
             {
                 bool result = blc.manageProjectMembers(0, Convert.ToInt32(cmbproject.SelectedValue.ToString()), Convert.ToInt32(cmbmemberrole.SelectedValue.ToString()), cmbmember.Text, txtdescription.Text, 1);
@@ -48,7 +69,7 @@ namespace asebugtrackingsystem
                 MessageBox.Show(ex.Message);
             }
         }
-
+        }
         private void btnedit_Click(object sender, EventArgs e)
         {
             try

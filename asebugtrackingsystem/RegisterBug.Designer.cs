@@ -31,12 +31,13 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.dgvbugentry = new System.Windows.Forms.DataGridView();
+            this.label7 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btndelete = new System.Windows.Forms.Button();
             this.btnedit = new System.Windows.Forms.Button();
             this.btnadd = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
+            this.txtcode = new System.Windows.Forms.RichTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtbrowse = new System.Windows.Forms.Button();
             this.txtclass = new System.Windows.Forms.TextBox();
@@ -59,7 +60,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtcode = new System.Windows.Forms.RichTextBox();
             this.groupBox1.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvbugentry)).BeginInit();
@@ -107,6 +107,15 @@
             this.dgvbugentry.Size = new System.Drawing.Size(806, 111);
             this.dgvbugentry.TabIndex = 0;
             this.dgvbugentry.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvbugentry_CellClick);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(11, 367);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(54, 21);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "Code";
             // 
             // panel4
             // 
@@ -158,14 +167,14 @@
             this.panel3.Size = new System.Drawing.Size(738, 66);
             this.panel3.TabIndex = 1;
             // 
-            // label7
+            // txtcode
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(11, 367);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(54, 21);
-            this.label7.TabIndex = 11;
-            this.label7.Text = "Code";
+            this.txtcode.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtcode.Location = new System.Drawing.Point(0, 0);
+            this.txtcode.Name = "txtcode";
+            this.txtcode.Size = new System.Drawing.Size(736, 64);
+            this.txtcode.TabIndex = 12;
+            this.txtcode.Text = "";
             // 
             // panel1
             // 
@@ -373,15 +382,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Date";
             // 
-            // txtcode
-            // 
-            this.txtcode.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtcode.Location = new System.Drawing.Point(0, 0);
-            this.txtcode.Name = "txtcode";
-            this.txtcode.Size = new System.Drawing.Size(736, 64);
-            this.txtcode.TabIndex = 12;
-            this.txtcode.Text = "";
-            // 
             // RegisterBug
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
@@ -414,7 +414,6 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.DataGridView dgvbugentry;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Button btndelete;
         private System.Windows.Forms.Button btnedit;
         private System.Windows.Forms.Button btnadd;
         private System.Windows.Forms.Panel panel3;
@@ -442,5 +441,6 @@
         private System.Windows.Forms.TextBox txtclass;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.RichTextBox txtcode;
+        public System.Windows.Forms.Button btndelete;
     }
 }

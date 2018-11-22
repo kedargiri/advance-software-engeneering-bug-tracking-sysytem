@@ -45,6 +45,44 @@ namespace asebugtrackingsystem
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if(cmbidentifiedbug.Text=="")
+            {
+                MessageBox.Show("Select Identified Bug");
+            }
+            else if(cmbproject.Text=="")
+            {
+                MessageBox.Show("Select Project");
+            }
+            else if(txtclass.Text=="")
+            {
+                MessageBox.Show("Provide Class");
+            }
+            else if(txtclassliabrary.Text=="")
+            {
+                MessageBox.Show("Provide Class Liabrary");
+            }
+            else if(txtcode.Text=="")
+            {
+                MessageBox.Show("Provide Code");
+            }
+            else if(txtlinenumber.Text=="")
+            {
+                MessageBox.Show("Provide Line Number");
+            }
+            else if(txtbugdetails.Text=="")
+            {
+                MessageBox.Show("Provide Bug Details");
+            }
+            else if(txtmethord.Text=="")
+            {
+                MessageBox.Show("Provide Method");
+            }
+            else { 
+
+
+
+
+
             try
             {
                 bool result = blc.manageBugs(0,Convert.ToDateTime(dtpdate.Text), Convert.ToInt32(cmbidentifiedbug.SelectedValue.ToString()), Convert.ToInt32(cmbproject.SelectedValue.ToString()), txtclassliabrary.Text,txtclass.Text, txtmethord.Text, txtblock.Text, txtlinenumber.Text, txtbugdetails.Text, HelperClass.imageConverter(pbsecrreshoterror), txtcode.Rtf, 1);
@@ -65,7 +103,7 @@ namespace asebugtrackingsystem
                 MessageBox.Show(ex.Message);
             }
         }
-
+        }
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 

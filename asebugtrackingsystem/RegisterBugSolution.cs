@@ -12,6 +12,7 @@ using DataAccessLayer;
 using System.IO;
 using WinFormsSyntaxHighlighter;
 using System.Text.RegularExpressions;
+using System.Data.SqlClient;
 
 namespace asebugtrackingsystem
 {
@@ -43,6 +44,24 @@ namespace asebugtrackingsystem
         public int id;
         private void btnadd_Click(object sender, EventArgs e)
         {
+            if (txtsolution.Text == "")
+            {
+                MessageBox.Show("Provide Solution");
+            }
+            else if (cmbbugdetail.Text == "")
+            {
+                MessageBox.Show("Select bug Details");
+            }
+            else if (cmbbugsolution.Text == "")
+            {
+                MessageBox.Show("Select Bug Solution");
+            }
+            else if (cmbproject.Text == "")
+            {
+                MessageBox.Show("Select Project");
+            }
+            else { 
+
             try
             {
                 bool result = blc.manageBugSolutions(0, Convert.ToDateTime(dtpdate.Text), Convert.ToInt32(cmbproject.SelectedValue.ToString()), Convert.ToInt32(cmbbugdetail.SelectedValue.ToString()), Convert.ToInt32(cmbbugsolution.SelectedValue.ToString()), txtsolution.Text, txtcode.Rtf, 1);
@@ -64,7 +83,7 @@ namespace asebugtrackingsystem
                 MessageBox.Show(ex.Message);
             }
         }
-
+        }
         private void RegisterBugSolution_Load(object sender, EventArgs e)
         {
             dgvregisterbugsolution.DataSource = get.getAllBugSolutions();
@@ -145,6 +164,43 @@ namespace asebugtrackingsystem
             MemoryStream memoryStream = new MemoryStream((byte[])dgvregisterbugsolution.SelectedRows[0].Cells["snapShotOfBugMessage"].Value);
             pbscreenshot.Image = Image.FromStream(memoryStream);
 
+
+        }
+
+        private void cmbbugdetail_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+
+                if (cmbbugdetail.SelectedIndex == -1)
+                {
+                    pbscreenshot.Image = null;
+                }
+                else
+                {
+                    SqlConnection conn = new SqlConnection(ConnectionClass.ConnectionString);
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand("SELECT snapShotOfBugMessage from BugEntryTable where bugid=@bugid", conn);
+                    SqlDataAdapter dt = new SqlDataAdapter(cmd);
+                    cmd.Parameters.AddWithValue("@bugId", Convert.ToInt32(cmbbugdetail.SelectedValue.ToString()));
+                    DataSet dr = new DataSet();
+                    dt.Fill(dr, "BugEntryTable");
+                    int c = dr.Tables["BugEntryTable"].Rows.Count;
+                    if (c > 0)
+                    {
+                        Byte[] byteBLOBData = new Byte[0];
+                        byteBLOBData = (Byte[])(dr.Tables["BugEntryTable"].Rows[c - 1]["snapShotOfBugMessage"]);
+                        MemoryStream stmBLOBData = new MemoryStream(byteBLOBData);
+                        pbscreenshot.Image = Image.FromStream(stmBLOBData);
+                    }
+                    conn.Close();
+                }
+            }
+            catch (Exception)
+            {
+
+
+            }
 
         }
     }

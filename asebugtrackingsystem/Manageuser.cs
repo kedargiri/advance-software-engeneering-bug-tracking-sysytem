@@ -25,6 +25,29 @@ namespace asebugtrackingsystem
         
         private void btnadd_Click(object sender, EventArgs e)
         {
+
+            if(cmbfullname.Text=="")
+            {
+                MessageBox.Show("Select the Full Name");
+            }
+            else if(cmbuserrole.Text=="")
+            {
+                MessageBox.Show("Select the User Role");
+            }
+            else if(txtusername.Text=="")
+            {
+                MessageBox.Show("Provide User Name");
+            }
+            else if(txtpassword.Text=="")
+            {
+                MessageBox.Show("Provide Password");
+            }
+            else if(txtconformpassword.Text=="")
+            {
+                MessageBox.Show("Provide Conform Password");
+            }
+            else { 
+
             try
             {
                 bool a = blc.Manageusers(0, Convert.ToInt32(cmbuserrole.SelectedValue.ToString()), Convert.ToInt32(cmbfullname.SelectedValue.ToString()), txtusername.Text, txtpassword.Text, 1);
@@ -44,6 +67,7 @@ namespace asebugtrackingsystem
                 MessageBox.Show(ex.Message);
             }
             
+        }
         }
 
         private void Manageuser_Load(object sender, EventArgs e)

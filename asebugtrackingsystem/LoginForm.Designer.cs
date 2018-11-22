@@ -30,7 +30,8 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.chkpassword = new System.Windows.Forms.CheckBox();
             this.txtpassword = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -38,7 +39,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnlogin = new System.Windows.Forms.Button();
             this.btnexit = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -57,7 +57,7 @@
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.Control;
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.checkBox1);
+            this.panel2.Controls.Add(this.chkpassword);
             this.panel2.Controls.Add(this.txtpassword);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
@@ -65,22 +65,34 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(441, 340);
+            this.panel2.Size = new System.Drawing.Size(449, 340);
             this.panel2.TabIndex = 8;
             // 
-            // checkBox1
+            // label4
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(12, 300);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(147, 25);
-            this.checkBox1.TabIndex = 7;
-            this.checkBox1.Text = "Show Password";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(44, 51);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(344, 21);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "LOGIN WITH YOUR BUG TRACKING SYSTEM";
+            // 
+            // chkpassword
+            // 
+            this.chkpassword.AutoSize = true;
+            this.chkpassword.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkpassword.Location = new System.Drawing.Point(12, 300);
+            this.chkpassword.Name = "chkpassword";
+            this.chkpassword.Size = new System.Drawing.Size(147, 25);
+            this.chkpassword.TabIndex = 7;
+            this.chkpassword.Text = "Show Password";
+            this.chkpassword.UseVisualStyleBackColor = true;
+            this.chkpassword.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // txtpassword
             // 
+            this.txtpassword.ForeColor = System.Drawing.SystemColors.InactiveCaption;
             this.txtpassword.Location = new System.Drawing.Point(26, 265);
             this.txtpassword.Name = "txtpassword";
             this.txtpassword.Size = new System.Drawing.Size(330, 26);
@@ -88,6 +100,8 @@
             this.txtpassword.Text = "Password";
             this.txtpassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtpassword.UseSystemPasswordChar = true;
+            this.txtpassword.Enter += new System.EventHandler(this.txtpassword_Enter);
+            this.txtpassword.Leave += new System.EventHandler(this.txtpassword_Leave);
             // 
             // label3
             // 
@@ -111,12 +125,15 @@
             // 
             // txtusername
             // 
+            this.txtusername.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.txtusername.Location = new System.Drawing.Point(26, 202);
             this.txtusername.Name = "txtusername";
             this.txtusername.Size = new System.Drawing.Size(330, 26);
             this.txtusername.TabIndex = 1;
             this.txtusername.Text = "User Name";
             this.txtusername.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtusername.Enter += new System.EventHandler(this.txtusername_Enter);
+            this.txtusername.Leave += new System.EventHandler(this.txtusername_Leave);
             // 
             // panel1
             // 
@@ -125,9 +142,9 @@
             this.panel1.Controls.Add(this.btnlogin);
             this.panel1.Controls.Add(this.btnexit);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 309);
+            this.panel1.Location = new System.Drawing.Point(0, 313);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(441, 171);
+            this.panel1.Size = new System.Drawing.Size(449, 171);
             this.panel1.TabIndex = 7;
             // 
             // btnlogin
@@ -158,28 +175,19 @@
             this.btnexit.TabIndex = 0;
             this.btnexit.Text = "&E&xit";
             this.btnexit.UseVisualStyleBackColor = false;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(44, 51);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(344, 21);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "LOGIN WITH YOUR BUG TRACKING SYSTEM";
+            this.btnexit.Click += new System.EventHandler(this.btnexit_Click);
             // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(441, 480);
+            this.ClientSize = new System.Drawing.Size(449, 484);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -197,7 +205,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox chkpassword;
         private System.Windows.Forms.TextBox txtpassword;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;

@@ -359,7 +359,7 @@ namespace DataAccessLayer
             try
             {
                 DataTable dt = new DataTable();
-                SqlCommand cmd = new SqlCommand("select b.bugSolutionId,b.dateOfSolutionIdentified,m.memberName, p.projectName,e.bugDetails,e.snapShotOfBugMessage,b.solutionDetails,b.codeAfterFixingBug from BugSolutionTable b,BugEntryTable e, ProjectTable p, MemberTable m where b.bugId=e.bugId and b.projectId=p.projectId and b.memberId=e.memberId and e.bugDetails=@bugDetails or e.bugDetails like @bugDetails + '%' ", conn);
+                SqlCommand cmd = new SqlCommand("select b.bugSolutionId,b.dateOfSolutionIdentified,m.memberName, p.projectName,e.bugDetails,e.snapShotOfBugMessage,b.solutionDetails,b.codeAfterFixingBug from BugSolutionTable b,BugEntryTable e, ProjectTable p, MemberTable m where b.bugId=e.bugId and b.projectId=p.projectId and b.memberId=m.memberId and e.bugDetails like @bugDetails + '%' ", conn);
                 cmd.CommandType = CommandType.Text;
                 cmd.Parameters.AddWithValue("@bugDetails", bugDetails);
                 conn.Open();

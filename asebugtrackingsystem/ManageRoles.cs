@@ -24,6 +24,15 @@ namespace asebugtrackingsystem
         public int id;
         private void btnadd_Click(object sender, EventArgs e)
         {
+            if(txtdescription.Text=="")
+            {
+                MessageBox.Show("Provide Description");
+            }
+            else if(txtdesignation.Text=="")
+            {
+                MessageBox.Show("Provide Designation");
+            }
+            else { 
             try
             {
                 bool x = blc.ManageRoles(0, txtdesignation.Text, txtdescription.Text,1);
@@ -43,7 +52,7 @@ namespace asebugtrackingsystem
                 MessageBox.Show(ex.Message);
             }
         }
-
+        }
         private void ManageRoles_Load(object sender, EventArgs e)
         {
             dgvmanagerole.DataSource = get.getalluserroles();

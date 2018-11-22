@@ -52,7 +52,36 @@ namespace asebugtrackingsystem
 
         private void btninsert_Click(object sender, EventArgs e)
         {
-            try
+            if (txtmembername.Text == "")
+            {
+                MessageBox.Show("provide Member Name");
+            }
+            else if (txtmemberaddress.Text == "")
+            {
+                MessageBox.Show("Provide Member Address");
+
+            }
+            else if (txtemail.Text == "")
+            {
+                MessageBox.Show("Provide Email address");
+            }
+
+            else if (txtcontact.Text == "")
+            {
+                MessageBox.Show("Provide Contact Number");
+            }
+            else if (txtdescription.Text == "")
+            {
+                MessageBox.Show("Provide Description");
+            }
+            else if (cmbgender.Text=="")
+            {
+                MessageBox.Show("Provide gender");
+            }
+            else { 
+
+
+                try
             {
                 bool x = blc.ManageMembers(0, txtmembername.Text, txtmemberaddress.Text, txtcontact.Text, txtemail.Text, cmbgender.Text, Convert.ToDateTime(dtpdateofbirth.Text), Convert.ToDateTime(dtpdateofjoin.Text), txtdescription.Text, HelperClass.imageConverter(pbprofilepicture), 1);
                 if (x == true)
@@ -71,6 +100,7 @@ namespace asebugtrackingsystem
                 MessageBox.Show(ex.Message);
             }
 
+        }
         }
 
         private void ManageMember_Load(object sender, EventArgs e)
