@@ -1,1 +1,1 @@
-<h1>A bug tracking software written using C#</h1>
+<h1>A bug tracking software written in C#</h1>
